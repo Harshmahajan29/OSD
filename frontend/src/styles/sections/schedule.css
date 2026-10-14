@@ -1,0 +1,98 @@
+.schedule {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+}
+.schedule__main {
+  flex: 999 1 560px;
+  min-width: 0;
+}
+.schedule__main .stop__title {
+  margin-bottom: 48px;
+}
+
+.trail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin: 0;
+  padding: 0 0 0 8px;
+  list-style: none;
+}
+/* Marching dashed path */
+.trail::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    180deg,
+    rgb(255 209 92 / 0.85) 0 10px,
+    transparent 10px 22px
+  );
+  background-size: 4px 22px;
+  box-shadow: 0 0 14px rgb(255 209 92 / 0.35);
+  animation: march 1.4s linear infinite;
+}
+.trail__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+  padding-left: 52px;
+}
+.trail__lantern {
+  position: absolute;
+  left: -10px;
+  top: -14px;
+  width: 24px;
+  transform-origin: 50% 0;
+  filter: drop-shadow(0 0 10px rgb(255 200 90 / 0.65));
+  animation: sway 3.4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.8s);
+}
+.trail__time {
+  font-weight: 600;
+  color: var(--c-pumpkin-soft);
+}
+.trail__title {
+  margin-top: 2px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.schedule__aside {
+  flex: 1 1 320px;
+  min-width: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+.schedule__tree {
+  width: min(380px, 100%);
+  filter: drop-shadow(0 26px 30px rgb(0 0 0 / 0.5)) drop-shadow(0 0 30px rgb(255 170 60 / 0.15));
+}
+
+.hanging-lantern {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 84px;
+  transform-origin: 50% 0;
+  filter: drop-shadow(0 0 26px rgb(255 190 80 / 0.45));
+  pointer-events: none;
+  animation: sway 4.2s ease-in-out infinite;
+}
+
+@media (max-width: 700px) {
+  .hanging-lantern {
+    display: none;
+  }
+}

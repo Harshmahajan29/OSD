@@ -1,0 +1,6 @@
+/*
+ * Self-hosted fonts (bundled by Vite from npm, no request to Google).
+ * Shrikhand: display headings. Bricolage Grotesque (variable): body text.
+ */
+@import '@fontsource/shrikhand/400.css';
+@import '@fontsource-variable/bricolage-grotesque/index.css';

@@ -1,0 +1,171 @@
+/* Shared building blocks: buttons, section headings, tags, cards, notes. */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+.btn--primary {
+  background: var(--c-pumpkin);
+  color: #1a0f2e;
+  box-shadow: var(--shadow-press);
+}
+.btn--primary:hover {
+  color: #1a0f2e;
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 0 var(--c-pumpkin-deep),
+    0 18px 40px rgb(255 123 28 / 0.35);
+}
+.btn--primary:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--c-pumpkin-deep);
+}
+.btn--ghost {
+  border: 2px solid rgb(246 240 255 / 0.4);
+  color: var(--c-text);
+  font-weight: 600;
+}
+.btn--ghost:hover {
+  color: var(--c-text);
+  background: rgb(246 240 255 / 0.12);
+}
+.btn--sm {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+}
+.btn--lg {
+  min-height: 56px;
+  padding: 0 28px;
+  border-radius: 18px;
+  font-size: 1.1875rem;
+}
+.btn--xl {
+  min-height: 60px;
+  padding: 0 38px;
+  font-size: 1.3125rem;
+}
+
+/* ---------- Sections ("stops" on the walk) ---------- */
+.stop {
+  position: relative;
+  overflow: hidden;
+  padding: var(--section-pad) 0 110px;
+}
+.stop > .container {
+  position: relative;
+}
+.stop--plum {
+  background: var(--c-plum);
+}
+.stop--night {
+  background: var(--c-night-2);
+}
+.stop--first {
+  padding-top: 24px;
+}
+
+.stop__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--c-candle);
+}
+.stop__label svg {
+  width: 28px;
+  height: 34px;
+  flex: none;
+}
+.stop__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-title);
+  line-height: 1.05;
+}
+.stop__text,
+.stop__intro {
+  max-width: 56ch;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--c-text-muted);
+}
+.stop__title + .stop__text {
+  margin-top: 18px;
+}
+.stop__text + .stop__text {
+  margin-top: 16px;
+}
+
+.stop__head--split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px 48px;
+}
+.stop__head--split > * {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+/* Cat paw prints that lead from the hero into the walk */
+.paws {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 40px;
+  opacity: 0.6;
+  fill: var(--c-candle);
+}
+.paws svg {
+  width: 22px;
+  height: 22px;
+}
+.paws svg:first-child {
+  transform: translateX(-14px) rotate(-12deg);
+}
+.paws svg:last-child {
+  transform: translateX(14px) rotate(12deg);
+}
+
+/* ---------- Small pieces ---------- */
+.tag {
+  align-self: flex-start;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgb(var(--accent) / 0.4);
+  background: rgb(var(--accent) / 0.14);
+  color: rgb(var(--accent));
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.note {
+  max-width: 28ch;
+  padding: 20px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-line);
+  background: var(--c-plum-2);
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--c-text-muted);
+}
+
+.card-surface {
+  border: 1px solid var(--c-line);
+  background: linear-gradient(180deg, var(--c-plum-3), var(--c-plum-2));
+}

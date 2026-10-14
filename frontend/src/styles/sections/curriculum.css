@@ -1,0 +1,215 @@
+.village {
+  max-width: 1100px;
+  margin: 56px auto 0;
+}
+.village__stage {
+  position: relative;
+}
+.village__img {
+  width: 100%;
+  filter: drop-shadow(0 28px 34px rgb(0 0 0 / 0.5));
+}
+
+/* Invisible click areas over each house */
+.village__spot {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(255 170 60 / 0), rgb(255 170 60 / 0));
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.village__spot:hover,
+.village__spot[aria-expanded='true'] {
+  background: radial-gradient(closest-side, rgb(255 170 60 / 0.28), rgb(255 170 60 / 0));
+}
+.village__spot--one {
+  left: 0;
+  top: 50%;
+  width: 30%;
+  height: 50%;
+}
+.village__spot--two {
+  left: 67%;
+  top: 14%;
+  width: 33%;
+  height: 56%;
+}
+
+/* Wooden-sign buttons */
+.sign {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 18px 11px;
+  border-radius: 16px;
+  border: 2px solid rgb(255 209 92 / 0.55);
+  background: linear-gradient(180deg, #3a2160, #24133f);
+  color: var(--c-text-warm);
+  white-space: nowrap;
+  cursor: pointer;
+  translate: -50% 0;
+  box-shadow:
+    0 8px 0 var(--c-ink),
+    0 0 24px rgb(255 170 60 / 0.25);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.sign:hover {
+  transform: translateY(-3px);
+}
+.sign::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: 20px;
+  border: 2px solid rgb(255 209 92 / 0.45);
+  pointer-events: none;
+  animation: ping 2.4s ease-out infinite;
+}
+.sign[aria-expanded='true'] {
+  border-color: var(--c-candle);
+  box-shadow:
+    0 8px 0 var(--c-ink),
+    0 0 34px rgb(255 190 80 / 0.6);
+}
+.sign[aria-expanded='true']::after {
+  animation: none;
+  opacity: 0;
+}
+.sign__kicker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.sign--one .sign__kicker {
+  color: var(--c-pumpkin-soft);
+}
+.sign--two .sign__kicker {
+  color: var(--c-violet-soft);
+}
+.sign__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+.sign--one {
+  left: 14%;
+  top: 26%;
+}
+.sign--two {
+  left: 84%;
+  top: 72%;
+}
+
+.village__hint {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--c-text-faint);
+}
+
+/* Topic panel */
+.scroll {
+  --accent: 255 178 122;
+  position: relative;
+  margin-top: 30px;
+  padding: 32px 32px 34px;
+  border-radius: 28px;
+  border: 1px solid rgb(var(--accent) / 0.45);
+  background: linear-gradient(180deg, var(--c-plum-3), #20123a);
+  box-shadow:
+    var(--shadow-card),
+    inset 0 1px 0 rgb(255 255 255 / 0.06);
+  animation: unroll 0.45s var(--ease-out);
+}
+.scroll--two {
+  --accent: 201 168 255;
+}
+.scroll::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: var(--arrow, 14%);
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  rotate: 45deg;
+  background: var(--c-plum-3);
+  border-left: 1px solid rgb(var(--accent) / 0.45);
+  border-top: 1px solid rgb(var(--accent) / 0.45);
+}
+.scroll--two::before {
+  --arrow: 84%;
+}
+.scroll__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+.scroll__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: rgb(var(--accent));
+}
+.scroll__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+  color: var(--c-text-faint);
+}
+.scroll__close {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--c-text-faint);
+  font-size: 1.625rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.scroll__close:hover {
+  background: rgb(246 240 255 / 0.08);
+}
+.scroll__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px 36px;
+  margin-top: 22px;
+}
+.scroll__grid h4 {
+  margin-bottom: 6px;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--c-candle-soft);
+}
+.scroll__grid p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--c-text-muted);
+}
+
+@media (max-width: 700px) {
+  .sign {
+    padding: 7px 12px 8px;
+  }
+  .sign__title {
+    font-size: 0.9375rem;
+  }
+  .scroll {
+    padding: 24px 20px 26px;
+  }
+}

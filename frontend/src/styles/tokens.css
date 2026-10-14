@@ -1,0 +1,60 @@
+/* Design tokens: change colours, fonts and sizing here, not in section files. */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces (night sky to plum) */
+  --c-night: #160c28;
+  --c-night-2: #170d2b;
+  --c-plum: #1e1236;
+  --c-plum-2: #22143d;
+  --c-plum-3: #2d1a4d;
+  --c-ink: #120a21;
+
+  /* Text */
+  --c-text: #f6f0ff;
+  --c-text-warm: #fff6e5;
+  --c-text-soft: #e4daf7;
+  --c-text-muted: #d8ccf0;
+  --c-text-faint: #c9bce6;
+
+  /* Accents */
+  --c-pumpkin: #ff7b1c;
+  --c-pumpkin-deep: #9c3105;
+  --c-pumpkin-soft: #ffb27a;
+  --c-candle: #ffd15c;
+  --c-candle-soft: #ffe9c2;
+  --c-violet: #8a4dff;
+  --c-violet-soft: #c9a8ff;
+  --c-violet-deep: #4b2390;
+
+  /* Lines */
+  --c-line: rgb(201 188 230 / 0.16);
+  --c-line-strong: rgb(201 188 230 / 0.28);
+
+  /* Type */
+  --font-display: 'Shrikhand', 'Georgia', serif;
+  --font-body: 'Bricolage Grotesque Variable', 'Trebuchet MS', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --fs-title: clamp(2.5rem, 5vw, 4rem);
+  --fs-hero: clamp(4rem, 9.5vw, 8.5rem);
+  --fs-body: 1.1875rem;
+
+  /* Layout */
+  --container: 1240px;
+  --gutter: 24px;
+  --section-pad: 100px;
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  /* Effects */
+  --shadow-press: 0 6px 0 var(--c-pumpkin-deep);
+  --shadow-card: 0 20px 50px rgb(5 0 15 / 0.45);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Hero pointer position, written by hero-parallax.js (-0.5 … 0.5) */
+  --mx: 0;
+  --my: 0;
+}

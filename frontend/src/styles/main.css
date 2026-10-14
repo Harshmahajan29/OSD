@@ -1,0 +1,14 @@
+/* Entry stylesheet. Order matters: tokens → base → motion → components → sections. */
+@import './tokens.css';
+@import './base.css';
+@import './animations.css';
+@import './components.css';
+@import './sections/nav.css';
+@import './sections/hero.css';
+@import './sections/curriculum.css';
+@import './sections/schedule.css';
+@import './sections/about.css';
+@import './sections/faq.css';
+@import './sections/events.css';
+@import './sections/register.css';
+@import './sections/footer.css';

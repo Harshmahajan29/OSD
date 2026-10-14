@@ -1,0 +1,329 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 72px;
+}
+
+/* WebGL fog (see scripts/fog/) */
+.hero__fog {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero__fog.is-ready {
+  opacity: 1;
+}
+
+.hero__inner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ---------- Copy ---------- */
+.hero__copy {
+  position: relative;
+  z-index: 3;
+  flex: 1 1 520px;
+  min-width: 0;
+}
+.hero__eyebrow {
+  margin-bottom: 18px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--c-text-faint);
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-hero);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  color: var(--c-text-warm);
+  text-shadow:
+    0 1px 0 #b48cff,
+    0 2px 0 #9c6bf5,
+    0 3px 0 #8a4dff,
+    0 4px 0 #7340d6,
+    0 5px 0 #5f33b8,
+    0 6px 0 #4b2390,
+    0 7px 0 #3b1b73,
+    0 8px 0 #2d145a,
+    0 18px 28px rgb(5 0 15 / 0.6),
+    0 0 70px rgb(255 140 50 / 0.35);
+}
+.tilt-title {
+  transform: perspective(1200px) rotateY(calc(var(--mx) * 7deg)) rotateX(calc(var(--my) * -5deg));
+  transition: transform 0.4s ease-out;
+}
+.hero__lede {
+  max-width: 34ch;
+  margin-top: 28px;
+  font-size: 1.3125rem;
+  line-height: 1.5;
+  color: var(--c-text-soft);
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.fact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+.fact svg {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.fact--orange {
+  background: rgb(255 123 28 / 0.14);
+  border: 1px solid rgb(255 123 28 / 0.45);
+}
+.fact--orange svg {
+  stroke: var(--c-pumpkin-soft);
+}
+.fact--violet {
+  background: rgb(138 77 255 / 0.16);
+  border: 1px solid rgb(138 77 255 / 0.45);
+}
+.fact--violet svg {
+  stroke: var(--c-violet-soft);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+/* ---------- Countdown ---------- */
+.countdown {
+  margin-top: 44px;
+}
+.countdown__label {
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--c-text-faint);
+}
+.countdown__live {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--c-candle);
+}
+.countdown__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.countdown__cell {
+  width: 72px;
+  padding: 14px 0 10px;
+  border-radius: 18px;
+  border: 1px solid rgb(201 188 230 / 0.18);
+  background: linear-gradient(180deg, var(--c-plum-3), var(--c-plum));
+  box-shadow:
+    inset 0 2px 0 rgb(255 255 255 / 0.08),
+    0 8px 0 #0f071c;
+  text-align: center;
+}
+.countdown__cell span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1.1;
+  color: var(--c-candle);
+  font-variant-numeric: tabular-nums;
+}
+.countdown__cell small {
+  font-size: 0.875rem;
+  color: var(--c-text-faint);
+}
+.countdown[data-live] .countdown__label,
+.countdown[data-live] .countdown__grid {
+  display: none;
+}
+
+/* ---------- Art ---------- */
+.hero__art {
+  position: relative;
+  flex: 1 1 440px;
+  min-width: 0;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: min(480px, 90%);
+  aspect-ratio: 1;
+}
+.moon__disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 36% 34%,
+    #fff8de 0%,
+    #ffe3a3 42%,
+    #f2b25c 82%,
+    #d98c3a 100%
+  );
+  box-shadow:
+    0 0 140px 40px rgb(255 209 92 / 0.3),
+    inset -30px -40px 80px rgb(170 90 20 / 0.35);
+}
+.moon__crater {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgb(200 130 50 / 0.2);
+  box-shadow: inset 4px 4px 8px rgb(150 80 20 / 0.25);
+}
+
+.hero__bat {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+}
+.hero__bat img {
+  filter: drop-shadow(0 10px 14px rgb(0 0 0 / 0.45));
+}
+.hero__bat--big {
+  top: -14px;
+  left: 0;
+  transform-origin: center;
+}
+.hero__bat--big img {
+  width: 150px;
+  rotate: -10deg;
+}
+.hero__bat--small {
+  top: 30px;
+  right: -3%;
+}
+.hero__bat--small img {
+  width: 92px;
+  scale: -1 1;
+  rotate: 12deg;
+  filter: drop-shadow(0 8px 10px rgb(0 0 0 / 0.4)) brightness(0.9);
+}
+
+/* Pointer-driven depth layers */
+.depth-1 {
+  translate: calc(var(--mx) * -46px) calc(var(--my) * -30px);
+  transition: translate 0.35s ease-out;
+}
+.depth-2 {
+  translate: calc(var(--mx) * 28px) calc(var(--my) * 18px);
+  transition: translate 0.35s ease-out;
+}
+.depth-3 {
+  translate: calc(var(--mx) * -14px) calc(var(--my) * -10px);
+  transition: translate 0.45s ease-out;
+}
+
+.hero__cat {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 100%);
+}
+.tilt {
+  position: relative;
+  transform: perspective(1000px) rotateY(calc(var(--mx) * 20deg)) rotateX(calc(var(--my) * -14deg));
+  transition: transform 0.3s ease-out;
+}
+.tilt img {
+  width: 100%;
+  filter: drop-shadow(0 34px 40px rgb(0 0 0 / 0.6)) drop-shadow(0 0 30px rgb(255 140 40 / 0.18));
+}
+/* Light layers clipped to the cat's silhouette */
+.hero__cat-rim,
+.hero__cat-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask: url('/assets/images/cat-on-pumpkin.webp') center / 100% 100% no-repeat;
+  mask: url('/assets/images/cat-on-pumpkin.webp') center / 100% 100% no-repeat;
+}
+.hero__cat-rim {
+  background: linear-gradient(
+    calc(200deg + var(--mx) * 60deg),
+    rgb(255 209 92 / 0.55),
+    transparent 30%,
+    transparent 70%,
+    rgb(138 77 255 / 0.5)
+  );
+  mix-blend-mode: color-dodge;
+  opacity: 0.55;
+}
+.hero__cat-shine {
+  background: radial-gradient(
+    circle at calc(38% + var(--mx) * 90%) calc(30% + var(--my) * 90%),
+    rgb(255 244 214 / 0.75),
+    transparent 38%
+  );
+  mix-blend-mode: soft-light;
+}
+
+.mist--hero {
+  bottom: 40px;
+  z-index: 2;
+}
+
+.hero__hill {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: 110px;
+  margin-top: 24px;
+  fill: var(--c-plum);
+}
+.hero__grass {
+  fill: none;
+  stroke: #4a8a33;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+@media (max-width: 700px) {
+  .countdown__label {
+    text-align: center;
+  }
+  .countdown__grid {
+    justify-content: center;
+  }
+  .countdown__live {
+    text-align: center;
+  }
+  .hero__art {
+    min-height: 420px;
+  }
+}
