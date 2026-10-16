@@ -59,14 +59,17 @@
 
     <!-- Top header navigation -->
     <header class="register-page__header">
+      <a class="register-page__brand" href="/" aria-label="WLUG Open Source Day Home">
+        <span class="register-page__brand-badge">WLUG</span>
+        <span>OSD 2026</span>
+      </a>
+
+      <!-- Secondary Back to Home link -->
       <a class="register-page__back-link" href="/" id="back-to-home-top">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
         </svg>
-        <span>Back</span>
-      </a>
-      <a class="register-page__brand" href="/" aria-label="WLUG home">
-        <span class="register-page__brand-badge">WLUG</span>
+        <span>Back to Home</span>
       </a>
     </header>
 
@@ -94,7 +97,7 @@
           </p>
         </div>
 
-        <!-- Registration Form (Only 5 fields allowed, in exact order) -->
+        <!-- Registration Form (6 required fields, in exact order) -->
         <form class="register-form" id="register-form" novalidate>
           <!-- 1. Name -->
           <div class="form-group" id="group-name">
@@ -154,7 +157,38 @@
             </div>
           </div>
 
-          <!-- 3. Year -->
+          <!-- 3. Mobile Number -->
+          <div class="form-group" id="group-mobile_number">
+            <label class="form-label" for="mobile_number">
+              <span
+                >Mobile Number <span class="form-label__required" aria-hidden="true">*</span></span
+              >
+              <span class="form-label__hint">10-digit number</span>
+            </label>
+            <div class="form-control-wrap">
+              <input
+                class="form-input"
+                type="tel"
+                id="mobile_number"
+                name="mobile_number"
+                placeholder="Enter your mobile number"
+                autocomplete="tel"
+                required
+                aria-required="true"
+                aria-describedby="mobile_number-error"
+              />
+            </div>
+            <div class="form-error" id="mobile_number-error" role="alert" aria-live="polite">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                />
+              </svg>
+              <span>Please enter your mobile number.</span>
+            </div>
+          </div>
+
+          <!-- 4. Year -->
           <div class="form-group" id="group-year">
             <label class="form-label" for="year">
               <span>Year <span class="form-label__required" aria-hidden="true">*</span></span>
@@ -189,11 +223,11 @@
             </div>
           </div>
 
-          <!-- 4. Department -->
+          <!-- 5. Department -->
           <div class="form-group" id="group-department">
             <label class="form-label" for="department">
               <span>Department <span class="form-label__required" aria-hidden="true">*</span></span>
-              <span class="form-label__hint">WCE Sangli</span>
+              <span class="form-label__hint">Branch of study</span>
             </label>
             <div class="form-control-wrap">
               <select
@@ -232,32 +266,34 @@
             </div>
           </div>
 
-          <!-- 5. PRN -->
-          <div class="form-group" id="group-prn">
-            <label class="form-label" for="prn">
-              <span>PRN <span class="form-label__required" aria-hidden="true">*</span></span>
-              <span class="form-label__hint">College PRN</span>
+          <!-- 6. College Name -->
+          <div class="form-group" id="group-college_name">
+            <label class="form-label" for="college_name">
+              <span
+                >College Name <span class="form-label__required" aria-hidden="true">*</span></span
+              >
+              <span class="form-label__hint">Institute name</span>
             </label>
             <div class="form-control-wrap">
               <input
                 class="form-input"
                 type="text"
-                id="prn"
-                name="prn"
-                placeholder="Enter your PRN"
-                autocomplete="off"
+                id="college_name"
+                name="college_name"
+                placeholder="Enter your college name"
+                autocomplete="organization"
                 required
                 aria-required="true"
-                aria-describedby="prn-error"
+                aria-describedby="college_name-error"
               />
             </div>
-            <div class="form-error" id="prn-error" role="alert" aria-live="polite">
+            <div class="form-error" id="college_name-error" role="alert" aria-live="polite">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
                 />
               </svg>
-              <span>Please enter your PRN.</span>
+              <span>Please enter your college name.</span>
             </div>
           </div>
 
@@ -312,12 +348,16 @@
                 <span class="ticket__val" id="ticket-email">—</span>
               </div>
               <div class="ticket__item">
+                <span class="ticket__label">Mobile</span>
+                <span class="ticket__val" id="ticket-mobile">—</span>
+              </div>
+              <div class="ticket__item">
                 <span class="ticket__label">Year & Dept</span>
                 <span class="ticket__val" id="ticket-year-dept">—</span>
               </div>
-              <div class="ticket__item">
-                <span class="ticket__label">PRN</span>
-                <span class="ticket__val" id="ticket-prn">—</span>
+              <div class="ticket__item ticket__full-width">
+                <span class="ticket__label">College</span>
+                <span class="ticket__val" id="ticket-college">—</span>
               </div>
             </div>
             <div class="ticket__footer">
