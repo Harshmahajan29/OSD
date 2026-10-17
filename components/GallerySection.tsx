@@ -113,8 +113,8 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
   {
     id: "mem-7",
     imageSrc: "/gallery/event-7.webp",
-    title: "The Mentorship Circle",
-    caption: "Senior engineers guiding newcomers through their first contributions.",
+    title: "The Learning Circle",
+    caption: "Guiding newcomers through their first contributions.",
     frameSrc: "/frames/frame-square.webp",
     frameStyle: "bronze",
     width: 165,
