@@ -229,22 +229,19 @@ export default function GallerySection() {
         <h2 className="text-4xl md:text-5xl font-normal text-[#f6f0ff] tracking-normal font-serif mb-3">
           The Hall of Memories
         </h2>
-        <p className="text-[#d8ccf0] text-sm md:text-base max-w-[56ch]">
-          Click any floating frame to view
-        </p>
       </div>
 
       {/* Pinned Salon Wall Exhibition Frame */}
-      <div className="relative w-full max-w-[980px] mx-auto flex justify-center px-4">
+      <div className="relative w-full max-w-[1200px] mx-auto flex justify-center px-4 mt-[90px] overflow-visible">
         <div
           ref={containerRef}
-          className="relative w-[940px] h-[620px] rounded-[18px] bg-[radial-gradient(circle_at_50%_32%,rgba(255,180,50,0.09)_0%,transparent_60%),radial-gradient(circle_at_18%_78%,rgba(138,77,255,0.12)_0%,transparent_50%),radial-gradient(circle_at_82%_78%,rgba(255,122,0,0.08)_0%,transparent_50%),linear-gradient(145deg,#160e29_0%,#0d071b_50%,#060210_100%)] shadow-[0_35px_100px_rgba(0,0,0,0.95),0_0_50px_rgba(255,122,0,0.15),inset_0_0_100px_rgba(0,0,0,0.92)] shrink-0"
+          className="relative w-[940px] h-[620px] rounded-[18px] bg-[radial-gradient(circle_at_50%_32%,rgba(255,180,50,0.09)_0%,transparent_60%),radial-gradient(circle_at_18%_78%,rgba(138,77,255,0.12)_0%,transparent_50%),radial-gradient(circle_at_82%_78%,rgba(255,122,0,0.08)_0%,transparent_50%),linear-gradient(145deg,#160e29_0%,#0d071b_50%,#060210_100%)] shadow-[0_35px_100px_rgba(0,0,0,0.95),0_0_50px_rgba(255,122,0,0.15),inset_0_0_100px_rgba(0,0,0,0.92)] shrink-0 origin-top scale-[0.66] -mb-[210px]"
         >
           {/* Master Rectangular Frame Overlay */}
           <img
             src="/frames/frame-square.png"
             alt="Master Rectangular Frame"
-            className="absolute -inset-x-[42px] -top-[46px] -bottom-[54px] w-[calc(100%+84px)] h-[calc(100%+100px)] object-fill pointer-events-none z-25 filter drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] drop-shadow-[0_0_35px_rgba(255,122,0,0.22)]"
+            className="absolute -top-[130px] -left-[190px] w-[1320px] max-w-none h-[885px] max-h-none object-fill pointer-events-none z-25 filter drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] drop-shadow-[0_0_35px_rgba(255,122,0,0.22)]"
           />
 
           {GALLERY_ITEMS.map((item, index) => (
@@ -340,9 +337,9 @@ export default function GallerySection() {
               </button>
 
               {/* Slider Viewport with Fixed Frame */}
-              <div className="relative w-[340px] h-[430px] md:w-[420px] md:h-[520px] flex items-center justify-center filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]">
+              <div className="relative w-[320px] h-[220px] md:w-[520px] md:h-[350px] flex items-center justify-center filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]">
                 {/* Sliding Photo Mask */}
-                <div className="absolute w-[62%] h-[66%] rounded-sm overflow-hidden z-10 bg-black/50">
+                <div className="absolute w-[74%] h-[67%] rounded-sm overflow-hidden z-10 bg-black/50">
                   <AnimatePresence initial={false} custom={direction} mode="popLayout">
                     <motion.img
                       key={selectedIndex}
