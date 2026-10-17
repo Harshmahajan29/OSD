@@ -6,8 +6,7 @@
 .gallery-section {
   position: relative;
   width: 100%;
-  background:
-    radial-gradient(ellipse 90% 70% at 50% 45%, #180d34 0%, #0e081f 65%, #070311 100%);
+  background: radial-gradient(ellipse 90% 70% at 50% 45%, #180d34 0%, #0e081f 65%, #070311 100%);
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
@@ -27,7 +26,12 @@
   transform: translate(-50%, -50%);
   width: min(700px, 90vw);
   height: min(700px, 90vw);
-  background: radial-gradient(circle, rgba(138, 77, 255, 0.2) 0%, rgba(88, 28, 135, 0.1) 45%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(138, 77, 255, 0.2) 0%,
+    rgba(88, 28, 135, 0.1) 45%,
+    transparent 70%
+  );
   filter: blur(140px);
 }
 
@@ -36,7 +40,12 @@
   left: 35%;
   width: min(400px, 70vw);
   height: min(400px, 70vw);
-  background: radial-gradient(circle, rgba(255, 122, 0, 0.15) 0%, rgba(217, 119, 6, 0.06) 50%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 122, 0, 0.15) 0%,
+    rgba(217, 119, 6, 0.06) 50%,
+    transparent 70%
+  );
   filter: blur(95px);
 }
 
@@ -115,9 +124,7 @@
   object-fit: fill;
   pointer-events: none;
   z-index: 25;
-  filter:
-    drop-shadow(0 25px 60px rgba(0, 0, 0, 0.95))
-    drop-shadow(0 0 35px rgba(255, 122, 0, 0.22));
+  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 35px rgba(255, 122, 0, 0.22));
 }
 
 /* Individual Floating Portrait Item */
@@ -144,26 +151,30 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #fff9d6 0%, #ffd700 40%, #b8860b 80%, #59400f 100%);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8), 0 0 8px rgba(255, 215, 0, 0.6);
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fff9d6 0%,
+    #ffd700 40%,
+    #b8860b 80%,
+    #59400f 100%
+  );
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.8),
+    0 0 8px rgba(255, 215, 0, 0.6);
   z-index: 22;
   pointer-events: none;
 }
 
-
 /* Centerpiece Portrait (Dumbledore position) */
-.gallery-portrait[data-centerpiece="true"] {
+.gallery-portrait[data-centerpiece='true'] {
   z-index: 15;
-  filter:
-    drop-shadow(0 20px 42px rgba(0, 0, 0, 0.9))
-    drop-shadow(0 0 24px rgba(255, 122, 0, 0.28));
+  filter: drop-shadow(0 20px 42px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 122, 0, 0.28));
 }
 
 .gallery-portrait:hover {
   z-index: 55 !important;
   transform: scale(1.08) translateY(-4px) !important;
-  filter:
-    drop-shadow(0 22px 50px rgba(0, 0, 0, 0.98))
+  filter: drop-shadow(0 22px 50px rgba(0, 0, 0, 0.98))
     drop-shadow(0 0 32px rgba(255, 190, 50, 0.55));
 }
 
@@ -181,8 +192,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: portrait-float var(--float-dur, 6s) ease-in-out infinite alternate,
-             portrait-rot calc(var(--float-dur, 6s) * 1.25) ease-in-out infinite alternate;
+  animation:
+    portrait-float var(--float-dur, 6s) ease-in-out infinite alternate,
+    portrait-rot calc(var(--float-dur, 6s) * 1.25) ease-in-out infinite alternate;
 }
 
 @keyframes portrait-float {
@@ -229,7 +241,9 @@
   object-position: center 25%;
   pointer-events: none;
   user-select: none;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
   filter: contrast(1.04) saturate(1.08) brightness(1.02);
 }
 
@@ -250,9 +264,17 @@
 }
 
 /* Ornate Gilded Gold Baroque Frame */
-.gallery-portrait[data-frame="gold"] .gallery-portrait__bezel {
+.gallery-portrait[data-frame='gold'] .gallery-portrait__bezel {
   border: 7px solid #d4af37;
-  border-image: linear-gradient(135deg, #ffe28a 0%, #d4af37 25%, #8b6508 50%, #f3d078 75%, #5c430e 100%) 8;
+  border-image: linear-gradient(
+      135deg,
+      #ffe28a 0%,
+      #d4af37 25%,
+      #8b6508 50%,
+      #f3d078 75%,
+      #5c430e 100%
+    )
+    8;
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.85),
     inset 0 0 0 2px #fff3bf,
@@ -261,9 +283,17 @@
 }
 
 /* Ornate Antique Silver Baroque Frame (Grand Centerpiece) */
-.gallery-portrait[data-frame="silver"] .gallery-portrait__bezel {
+.gallery-portrait[data-frame='silver'] .gallery-portrait__bezel {
   border: 9px solid #b0b8c2;
-  border-image: linear-gradient(135deg, #ffffff 0%, #c4cbd4 25%, #606770 50%, #e1e5eb 75%, #2c3036 100%) 9;
+  border-image: linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #c4cbd4 25%,
+      #606770 50%,
+      #e1e5eb 75%,
+      #2c3036 100%
+    )
+    9;
   box-shadow:
     0 18px 45px rgba(0, 0, 0, 0.95),
     0 0 25px rgba(200, 220, 255, 0.25),
@@ -273,9 +303,17 @@
 }
 
 /* Ornate Antique Bronze Frame */
-.gallery-portrait[data-frame="bronze"] .gallery-portrait__bezel {
+.gallery-portrait[data-frame='bronze'] .gallery-portrait__bezel {
   border: 7px solid #9c6e3b;
-  border-image: linear-gradient(135deg, #cca87c 0%, #9c6e3b 25%, #523516 50%, #b88f5d 75%, #3b2209 100%) 8;
+  border-image: linear-gradient(
+      135deg,
+      #cca87c 0%,
+      #9c6e3b 25%,
+      #523516 50%,
+      #b88f5d 75%,
+      #3b2209 100%
+    )
+    8;
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.85),
     inset 0 0 0 2px #e3cbb1,
@@ -286,7 +324,7 @@
 /* Ornate Frame Corner Filigree Accents */
 .gallery-portrait__bezel::before,
 .gallery-portrait__bezel::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 14px;
   height: 14px;
@@ -294,13 +332,13 @@
   pointer-events: none;
 }
 
-.gallery-portrait[data-frame="silver"] .gallery-portrait__bezel::before,
-.gallery-portrait[data-frame="silver"] .gallery-portrait__bezel::after {
+.gallery-portrait[data-frame='silver'] .gallery-portrait__bezel::before,
+.gallery-portrait[data-frame='silver'] .gallery-portrait__bezel::after {
   border-color: #ffffff;
 }
 
-.gallery-portrait[data-frame="bronze"] .gallery-portrait__bezel::before,
-.gallery-portrait[data-frame="bronze"] .gallery-portrait__bezel::after {
+.gallery-portrait[data-frame='bronze'] .gallery-portrait__bezel::before,
+.gallery-portrait[data-frame='bronze'] .gallery-portrait__bezel::after {
   border-color: #cca87c;
 }
 
@@ -317,7 +355,6 @@
   border-left: none;
   border-top: none;
 }
-
 
 /* ========================================================
    LIGHTBOX SLIDER MODAL
@@ -377,7 +414,10 @@
   cursor: pointer;
   padding: 6px 14px;
   border-radius: var(--radius-pill);
-  transition: color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease,
+    background 0.18s ease;
 }
 
 .gallery-modal__close:hover {
@@ -436,7 +476,9 @@
   object-position: center 25%;
   user-select: none;
   -webkit-user-drag: none;
-  transition: transform 0.35s cubic-bezier(0.2, 0.85, 0.3, 1), opacity 0.25s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.85, 0.3, 1),
+    opacity 0.25s ease;
   will-change: transform, opacity;
 }
 
@@ -545,7 +587,7 @@
 /* Responsive scaling for tablet & mobile so the framed wall stays intact */
 @media (max-width: 900px) {
   .gallery-wall-frame {
-    transform: scale(0.50) !important;
+    transform: scale(0.5) !important;
     margin-bottom: -310px !important;
   }
 }

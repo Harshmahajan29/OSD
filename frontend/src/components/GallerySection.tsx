@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface GalleryPhoto {
   id: string;
@@ -9,7 +9,7 @@ interface GalleryPhoto {
   title: string;
   caption: string;
   frameSrc: string;
-  frameStyle: "gold" | "silver" | "bronze";
+  frameStyle: 'gold' | 'silver' | 'bronze';
   width: number;
   height: number;
   top: string;
@@ -22,133 +22,133 @@ interface GalleryPhoto {
 const GALLERY_ITEMS: GalleryPhoto[] = [
   // Top Row (Sirius, McGonagall/Umbridge, Bellatrix)
   {
-    id: "mem-1",
-    imageSrc: "/gallery/event-1.webp",
-    title: "The Gathering",
-    caption: "Attendees kicking off the day at WCE Sangli.",
-    frameSrc: "/frames/frame-square.webp",
-    frameStyle: "gold",
+    id: 'mem-1',
+    imageSrc: '/gallery/event-1.webp',
+    title: 'The Gathering',
+    caption: 'Attendees kicking off the day at WCE Sangli.',
+    frameSrc: '/frames/frame-square.webp',
+    frameStyle: 'gold',
     width: 165,
     height: 190,
-    top: "25px",
-    left: "55px",
+    top: '25px',
+    left: '55px',
     floatDuration: 6.2,
     rotationDrift: 0.9,
   },
   {
-    id: "mem-2",
-    imageSrc: "/gallery/event-2.webp",
-    title: "Microservices Workshop",
-    caption: "Hands-on microservice architectures, containers, and deployments.",
-    frameSrc: "/frames/frame-oval.webp",
-    frameStyle: "gold",
+    id: 'mem-2',
+    imageSrc: '/gallery/event-2.webp',
+    title: 'Microservices Workshop',
+    caption: 'Hands-on microservice architectures, containers, and deployments.',
+    frameSrc: '/frames/frame-oval.webp',
+    frameStyle: 'gold',
     width: 200,
     height: 135,
-    top: "20px",
-    left: "370px",
+    top: '20px',
+    left: '370px',
     floatDuration: 7.2,
     rotationDrift: -0.8,
   },
   {
-    id: "mem-3",
-    imageSrc: "/gallery/event-3.webp",
-    title: "Git & GitHub Labs",
-    caption: "Demystifying commits, branching, pull requests, and interactive rebasing.",
-    frameSrc: "/frames/frame-gothic.webp",
-    frameStyle: "gold",
+    id: 'mem-3',
+    imageSrc: '/gallery/event-3.webp',
+    title: 'Git & GitHub Labs',
+    caption: 'Demystifying commits, branching, pull requests, and interactive rebasing.',
+    frameSrc: '/frames/frame-gothic.webp',
+    frameStyle: 'gold',
     width: 165,
     height: 190,
-    top: "25px",
-    left: "720px",
+    top: '25px',
+    left: '720px',
     floatDuration: 6.6,
     rotationDrift: 1.1,
   },
 
   // Middle Row (Lucius Malfoy, Grand Centerpiece Dumbledore, Severus Snape)
   {
-    id: "mem-4",
-    imageSrc: "/gallery/event-4.webp",
-    title: "Terminal Sorcery",
-    caption: "Late afternoon command-line mastery and debugging puzzles.",
-    frameSrc: "/frames/frame-square.webp",
-    frameStyle: "gold",
+    id: 'mem-4',
+    imageSrc: '/gallery/event-4.webp',
+    title: 'Terminal Sorcery',
+    caption: 'Late afternoon command-line mastery and debugging puzzles.',
+    frameSrc: '/frames/frame-square.webp',
+    frameStyle: 'gold',
     width: 165,
     height: 215,
-    top: "195px",
-    left: "180px",
+    top: '195px',
+    left: '180px',
     floatDuration: 5.8,
     rotationDrift: -0.9,
   },
   {
-    id: "mem-5",
-    imageSrc: "/gallery/event-5.webp",
-    title: "The Grand Assembly",
-    caption: "The keynote hall alive with open source passion and energy.",
-    frameSrc: "/frames/frame-gothic.webp",
-    frameStyle: "silver",
+    id: 'mem-5',
+    imageSrc: '/gallery/event-5.webp',
+    title: 'The Grand Assembly',
+    caption: 'The keynote hall alive with open source passion and energy.',
+    frameSrc: '/frames/frame-gothic.webp',
+    frameStyle: 'silver',
     width: 220,
     height: 280,
-    top: "165px",
-    left: "360px",
+    top: '165px',
+    left: '360px',
     floatDuration: 8.0,
     rotationDrift: 0.6,
     isCenterpiece: true,
   },
   {
-    id: "mem-6",
-    imageSrc: "/gallery/event-6.webp",
-    title: "Code & Collaboration",
-    caption: "Peer programming, architecture debates, and lightning hacks.",
-    frameSrc: "/frames/frame-square.webp",
-    frameStyle: "gold",
+    id: 'mem-6',
+    imageSrc: '/gallery/event-6.webp',
+    title: 'Code & Collaboration',
+    caption: 'Peer programming, architecture debates, and lightning hacks.',
+    frameSrc: '/frames/frame-square.webp',
+    frameStyle: 'gold',
     width: 165,
     height: 215,
-    top: "195px",
-    left: "595px",
+    top: '195px',
+    left: '595px',
     floatDuration: 6.5,
     rotationDrift: 0.9,
   },
 
   // Bottom Row (Hagrid, Rita/Hedwig, Gilderoy Lockhart)
   {
-    id: "mem-7",
-    imageSrc: "/gallery/event-7.webp",
-    title: "The Mentorship Circle",
-    caption: "Senior engineers guiding newcomers through their first contributions.",
-    frameSrc: "/frames/frame-square.webp",
-    frameStyle: "bronze",
+    id: 'mem-7',
+    imageSrc: '/gallery/event-7.webp',
+    title: 'The Mentorship Circle',
+    caption: 'Senior engineers guiding newcomers through their first contributions.',
+    frameSrc: '/frames/frame-square.webp',
+    frameStyle: 'bronze',
     width: 165,
     height: 220,
-    top: "360px",
-    left: "55px",
+    top: '360px',
+    left: '55px',
     floatDuration: 6.4,
     rotationDrift: 1.0,
   },
   {
-    id: "mem-8",
-    imageSrc: "/gallery/event-8.webp",
-    title: "Open Source Odyssey",
-    caption: "Exploring distributed systems and real-world Linux tools.",
-    frameSrc: "/frames/frame-oval.webp",
-    frameStyle: "gold",
+    id: 'mem-8',
+    imageSrc: '/gallery/event-8.webp',
+    title: 'Open Source Odyssey',
+    caption: 'Exploring distributed systems and real-world Linux tools.',
+    frameSrc: '/frames/frame-oval.webp',
+    frameStyle: 'gold',
     width: 200,
     height: 125,
-    top: "465px",
-    left: "370px",
+    top: '465px',
+    left: '370px',
     floatDuration: 7.0,
     rotationDrift: -0.8,
   },
   {
-    id: "mem-9",
-    imageSrc: "/gallery/event-9.webp",
-    title: "The Finale",
-    caption: "Certificates, swags, and closing open source celebrations.",
-    frameSrc: "/frames/frame-gothic.webp",
-    frameStyle: "gold",
+    id: 'mem-9',
+    imageSrc: '/gallery/event-9.webp',
+    title: 'The Finale',
+    caption: 'Certificates, swags, and closing open source celebrations.',
+    frameSrc: '/frames/frame-gothic.webp',
+    frameStyle: 'gold',
     width: 165,
     height: 220,
-    top: "360px",
-    left: "720px",
+    top: '360px',
+    left: '720px',
     floatDuration: 6.8,
     rotationDrift: -1.0,
   },
@@ -165,7 +165,7 @@ const slideVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      x: { type: "spring", stiffness: 300, damping: 30 },
+      x: { type: 'spring', stiffness: 300, damping: 30 },
       opacity: { duration: 0.2 },
     },
   },
@@ -174,7 +174,7 @@ const slideVariants = {
     opacity: 0,
     scale: 0.9,
     transition: {
-      x: { type: "spring", stiffness: 300, damping: 30 },
+      x: { type: 'spring', stiffness: 300, damping: 30 },
       opacity: { duration: 0.2 },
     },
   }),
@@ -188,12 +188,12 @@ export default function GallerySection() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return;
-      if (e.key === "Escape") setSelectedIndex(null);
-      if (e.key === "ArrowRight") paginate(1);
-      if (e.key === "ArrowLeft") paginate(-1);
+      if (e.key === 'Escape') setSelectedIndex(null);
+      if (e.key === 'ArrowRight') paginate(1);
+      if (e.key === 'ArrowLeft') paginate(-1);
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedIndex]);
 
   const paginate = (newDirection: number) => {
@@ -209,7 +209,10 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="gallery" className="relative w-full min-h-[110vh] bg-[#0E081F] overflow-hidden select-none py-16 px-4">
+    <section
+      id="gallery"
+      className="relative w-full min-h-[110vh] bg-[#0E081F] overflow-hidden select-none py-16 px-4"
+    >
       {/* Background glow effects */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-purple-900/20 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 left-1/3 w-[450px] h-[450px] bg-amber-600/10 rounded-full blur-[100px] pointer-events-none" />
@@ -260,12 +263,12 @@ export default function GallerySection() {
                 y: {
                   duration: item.floatDuration,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                 },
                 rotate: {
                   duration: item.floatDuration * 1.25,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                 },
               }}
               onClick={() => {
@@ -273,7 +276,7 @@ export default function GallerySection() {
                 setSelectedIndex(index);
               }}
               style={{
-                position: "absolute",
+                position: 'absolute',
                 top: item.top,
                 left: item.left,
                 width: item.width,
@@ -297,11 +300,11 @@ export default function GallerySection() {
               {/* Ornate Gilded/Silver Frame Bezel */}
               <div
                 className={`absolute inset-0 pointer-events-none z-20 ${
-                  item.frameStyle === "silver"
-                    ? "border-[9px] border-[#b0b8c2] shadow-[0_18px_45px_rgba(0,0,0,0.95),0_0_25px_rgba(200,220,255,0.25),inset_0_0_0_2px_#ffffff,inset_0_0_0_5px_#262a30,inset_0_0_14px_rgba(0,0,0,0.85)]"
-                    : item.frameStyle === "bronze"
-                    ? "border-[7px] border-[#9c6e3b] shadow-[0_12px_28px_rgba(0,0,0,0.85),inset_0_0_0_2px_#e3cbb1,inset_0_0_0_4px_#42260d,inset_0_0_10px_rgba(0,0,0,0.8)]"
-                    : "border-[7px] border-[#d4af37] shadow-[0_12px_28px_rgba(0,0,0,0.85),inset_0_0_0_2px_#fff3bf,inset_0_0_0_4px_#5a3e0b,inset_0_0_10px_rgba(0,0,0,0.8)]"
+                  item.frameStyle === 'silver'
+                    ? 'border-[9px] border-[#b0b8c2] shadow-[0_18px_45px_rgba(0,0,0,0.95),0_0_25px_rgba(200,220,255,0.25),inset_0_0_0_2px_#ffffff,inset_0_0_0_5px_#262a30,inset_0_0_14px_rgba(0,0,0,0.85)]'
+                    : item.frameStyle === 'bronze'
+                      ? 'border-[7px] border-[#9c6e3b] shadow-[0_12px_28px_rgba(0,0,0,0.85),inset_0_0_0_2px_#e3cbb1,inset_0_0_0_4px_#42260d,inset_0_0_10px_rgba(0,0,0,0.8)]'
+                      : 'border-[7px] border-[#d4af37] shadow-[0_12px_28px_rgba(0,0,0,0.85),inset_0_0_0_2px_#fff3bf,inset_0_0_0_4px_#5a3e0b,inset_0_0_10px_rgba(0,0,0,0.8)]'
                 }`}
               />
             </motion.div>
@@ -323,7 +326,7 @@ export default function GallerySection() {
               initial={{ scale: 0.85, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.85, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 280 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 280 }}
               className="relative flex flex-col items-center max-w-lg w-full"
               onClick={(e) => e.stopPropagation()}
             >
