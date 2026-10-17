@@ -31,7 +31,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 165,
     height: 190,
     top: "25px",
-    left: "45px",
+    left: "55px",
     floatDuration: 6.2,
     rotationDrift: 0.9,
   },
@@ -45,7 +45,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 200,
     height: 135,
     top: "20px",
-    left: "360px",
+    left: "370px",
     floatDuration: 7.2,
     rotationDrift: -0.8,
   },
@@ -59,7 +59,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 165,
     height: 190,
     top: "25px",
-    left: "710px",
+    left: "720px",
     floatDuration: 6.6,
     rotationDrift: 1.1,
   },
@@ -75,7 +75,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 165,
     height: 215,
     top: "195px",
-    left: "170px",
+    left: "180px",
     floatDuration: 5.8,
     rotationDrift: -0.9,
   },
@@ -89,7 +89,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 220,
     height: 280,
     top: "165px",
-    left: "350px",
+    left: "360px",
     floatDuration: 8.0,
     rotationDrift: 0.6,
     isCenterpiece: true,
@@ -104,7 +104,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 165,
     height: 215,
     top: "195px",
-    left: "585px",
+    left: "595px",
     floatDuration: 6.5,
     rotationDrift: 0.9,
   },
@@ -120,7 +120,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 165,
     height: 220,
     top: "360px",
-    left: "45px",
+    left: "55px",
     floatDuration: 6.4,
     rotationDrift: 1.0,
   },
@@ -133,8 +133,8 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     frameStyle: "gold",
     width: 200,
     height: 125,
-    top: "460px",
-    left: "360px",
+    top: "465px",
+    left: "370px",
     floatDuration: 7.0,
     rotationDrift: -0.8,
   },
@@ -148,7 +148,7 @@ const GALLERY_ITEMS: GalleryPhoto[] = [
     width: 165,
     height: 220,
     top: "360px",
-    left: "710px",
+    left: "720px",
     floatDuration: 6.8,
     rotationDrift: -1.0,
   },
@@ -238,14 +238,14 @@ export default function GallerySection() {
       <div className="relative w-full max-w-[980px] mx-auto flex justify-center px-4">
         <div
           ref={containerRef}
-          className="relative w-[920px] h-[610px] rounded-[14px] border-[12px] border-[#23160a] outline outline-[3px] outline-[#d4af37] -outline-offset-[7px] bg-[radial-gradient(circle_at_50%_32%,rgba(255,180,50,0.09)_0%,transparent_60%),radial-gradient(circle_at_18%_78%,rgba(138,77,255,0.12)_0%,transparent_50%),radial-gradient(circle_at_82%_78%,rgba(255,122,0,0.08)_0%,transparent_50%),linear-gradient(145deg,#160e29_0%,#0d071b_50%,#060210_100%)] shadow-[0_35px_100px_rgba(0,0,0,0.95),0_0_50px_rgba(255,122,0,0.15),inset_0_0_100px_rgba(0,0,0,0.92)] shrink-0"
+          className="relative w-[940px] h-[620px] rounded-[18px] bg-[radial-gradient(circle_at_50%_32%,rgba(255,180,50,0.09)_0%,transparent_60%),radial-gradient(circle_at_18%_78%,rgba(138,77,255,0.12)_0%,transparent_50%),radial-gradient(circle_at_82%_78%,rgba(255,122,0,0.08)_0%,transparent_50%),linear-gradient(145deg,#160e29_0%,#0d071b_50%,#060210_100%)] shadow-[0_35px_100px_rgba(0,0,0,0.95),0_0_50px_rgba(255,122,0,0.15),inset_0_0_100px_rgba(0,0,0,0.92)] shrink-0"
         >
-          {/* Pinned Brass Plaque */}
-          <div className="absolute -top-[15px] left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-3 px-5 py-1 bg-gradient-to-b from-[#d4af37] via-[#aa820a] to-[#5e4606] border border-[#ffe899] rounded text-[#1a1005] font-serif text-xs font-extrabold tracking-widest uppercase shadow-lg pointer-events-none whitespace-nowrap">
-            <span className="text-[#fff4cc] text-[10px]">✦</span>
-            <span>THE HALL OF MEMORIES</span>
-            <span className="text-[#fff4cc] text-[10px]">✦</span>
-          </div>
+          {/* Master Rectangular Frame Overlay */}
+          <img
+            src="/frames/frame-square.png"
+            alt="Master Rectangular Frame"
+            className="absolute -inset-x-[42px] -top-[46px] -bottom-[54px] w-[calc(100%+84px)] h-[calc(100%+100px)] object-fill pointer-events-none z-25 filter drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] drop-shadow-[0_0_35px_rgba(255,122,0,0.22)]"
+          />
 
           {GALLERY_ITEMS.map((item, index) => (
             <motion.div
@@ -367,7 +367,7 @@ export default function GallerySection() {
 
                 {/* Frame Bezel */}
                 <img
-                  src={GALLERY_ITEMS[selectedIndex].frameSrc}
+                  src="/frames/frame-square.png"
                   alt="Frame Bezel"
                   className="absolute inset-0 w-full h-full object-contain pointer-events-none z-20"
                 />

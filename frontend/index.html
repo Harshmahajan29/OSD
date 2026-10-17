@@ -474,26 +474,19 @@
           </p>
           <h2 class="stop__title">The Hall of Memories</h2>
           <p class="stop__text">Click any floating frame to view</p>
-
-          <div class="gallery-style-toggle" role="group" aria-label="Portrait Frame Style">
-            <button type="button" class="gallery-style-btn is-active" data-style-set="grand">
-              <span>🏛️</span> Grand Salon
-            </button>
-            <button type="button" class="gallery-style-btn" data-style-set="clay">
-              <span>🎃</span> Spooky Clay
-            </button>
-          </div>
         </div>
 
         <!-- Pinned Salon Wall Exhibition Frame -->
         <div class="gallery-wall-wrapper">
-          <div class="gallery-wall-frame" data-gallery-canvas data-frame-style="grand">
-            <!-- Pinned Brass Plaque -->
-            <div class="gallery-wall-plaque">
-              <span class="gallery-wall-plaque__stud">✦</span>
-              <span class="gallery-wall-plaque__title">THE HALL OF MEMORIES</span>
-              <span class="gallery-wall-plaque__stud">✦</span>
-            </div>
+          <div class="gallery-wall-frame" data-gallery-canvas>
+            <!-- Master Rectangular Frame Overlay -->
+            <img
+              class="gallery-wall-master-frame"
+              src="/frames/frame-square.png"
+              alt="Ornate Rectangular Master Frame"
+              loading="lazy"
+              decoding="async"
+            />
 
             <!-- Portrait 1 (Top-Left: The Gathering - Sirius Black Position) -->
             <div
@@ -501,7 +494,7 @@
               data-gallery-item
               data-index="0"
               data-frame="gold"
-              style="width: 165px; height: 190px; top: 25px; left: 45px; --float-dist: 5px; --float-dur: 6.2s; --rot-drift: 0.9deg;"
+              style="width: 165px; height: 190px; top: 25px; left: 55px; --float-dist: 5px; --float-dur: 6.2s; --rot-drift: 0.9deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -509,13 +502,6 @@
                   <img src="/gallery/event-1.jpg" alt="The Gathering" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-square.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -525,7 +511,7 @@
               data-gallery-item
               data-index="1"
               data-frame="gold"
-              style="width: 200px; height: 135px; top: 20px; left: 360px; --float-dist: 6px; --float-dur: 7.2s; --rot-drift: -0.8deg;"
+              style="width: 200px; height: 135px; top: 20px; left: 370px; --float-dist: 6px; --float-dur: 7.2s; --rot-drift: -0.8deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -533,13 +519,6 @@
                   <img src="/gallery/event-2.jpg" alt="Microservices Workshop" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-oval.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -549,7 +528,7 @@
               data-gallery-item
               data-index="2"
               data-frame="gold"
-              style="width: 165px; height: 190px; top: 25px; left: 710px; --float-dist: 5px; --float-dur: 6.6s; --rot-drift: 1.1deg;"
+              style="width: 165px; height: 190px; top: 25px; left: 720px; --float-dist: 5px; --float-dur: 6.6s; --rot-drift: 1.1deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -557,13 +536,6 @@
                   <img src="/gallery/event-3.jpg" alt="Git & GitHub Labs" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-gothic.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -573,7 +545,7 @@
               data-gallery-item
               data-index="3"
               data-frame="gold"
-              style="width: 165px; height: 215px; top: 195px; left: 170px; --float-dist: 5px; --float-dur: 5.8s; --rot-drift: -0.9deg;"
+              style="width: 165px; height: 215px; top: 195px; left: 180px; --float-dist: 5px; --float-dur: 5.8s; --rot-drift: -0.9deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -581,13 +553,6 @@
                   <img src="/gallery/event-4.jpg" alt="Terminal Sorcery" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-square.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -598,7 +563,7 @@
               data-index="4"
               data-centerpiece="true"
               data-frame="silver"
-              style="width: 220px; height: 280px; top: 165px; left: 350px; z-index: 15; --float-dist: 4px; --float-dur: 8.0s; --rot-drift: 0.6deg;"
+              style="width: 220px; height: 280px; top: 165px; left: 360px; z-index: 15; --float-dist: 4px; --float-dur: 8.0s; --rot-drift: 0.6deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -606,13 +571,6 @@
                   <img src="/gallery/event-5.jpg" alt="The Grand Assembly" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-gothic.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -622,7 +580,7 @@
               data-gallery-item
               data-index="5"
               data-frame="gold"
-              style="width: 165px; height: 215px; top: 195px; left: 585px; --float-dist: 5px; --float-dur: 6.5s; --rot-drift: 0.9deg;"
+              style="width: 165px; height: 215px; top: 195px; left: 595px; --float-dist: 5px; --float-dur: 6.5s; --rot-drift: 0.9deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -630,13 +588,6 @@
                   <img src="/gallery/event-6.jpg" alt="Code & Collaboration" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-square.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -646,7 +597,7 @@
               data-gallery-item
               data-index="6"
               data-frame="bronze"
-              style="width: 165px; height: 220px; top: 360px; left: 45px; --float-dist: 6px; --float-dur: 6.4s; --rot-drift: 1.0deg;"
+              style="width: 165px; height: 220px; top: 360px; left: 55px; --float-dist: 6px; --float-dur: 6.4s; --rot-drift: 1.0deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -654,13 +605,6 @@
                   <img src="/gallery/event-7.jpg" alt="The Mentorship Circle" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-square.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -670,7 +614,7 @@
               data-gallery-item
               data-index="7"
               data-frame="gold"
-              style="width: 200px; height: 125px; top: 460px; left: 360px; --float-dist: 5px; --float-dur: 7.0s; --rot-drift: -0.8deg;"
+              style="width: 200px; height: 125px; top: 465px; left: 370px; --float-dist: 5px; --float-dur: 7.0s; --rot-drift: -0.8deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -678,13 +622,6 @@
                   <img src="/gallery/event-8.jpg" alt="Open Source Odyssey" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-oval.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
 
@@ -694,7 +631,7 @@
               data-gallery-item
               data-index="8"
               data-frame="gold"
-              style="width: 165px; height: 220px; top: 360px; left: 710px; --float-dist: 6px; --float-dur: 6.8s; --rot-drift: -1.0deg;"
+              style="width: 165px; height: 220px; top: 360px; left: 720px; --float-dist: 6px; --float-dur: 6.8s; --rot-drift: -1.0deg;"
             >
               <div class="gallery-portrait__float">
                 <span class="gallery-portrait__pin" aria-hidden="true"></span>
@@ -702,13 +639,6 @@
                   <img src="/gallery/event-9.jpg" alt="The Finale" loading="lazy" decoding="async" />
                 </div>
                 <div class="gallery-portrait__bezel" aria-hidden="true"></div>
-                <img
-                  class="gallery-portrait__clay-frame"
-                  src="/frames/frame-gothic.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
           </div>
@@ -729,8 +659,8 @@
                 <div class="gallery-modal__slider" data-modal-slider></div>
               </div>
 
-              <!-- Clay Frame Bezel Overlay -->
-              <img class="gallery-modal__bezel" data-modal-bezel src="/frames/frame-gothic.png" alt="Frame Bezel" />
+              <!-- Rectangular Frame Bezel Overlay -->
+              <img class="gallery-modal__bezel" data-modal-bezel src="/frames/frame-square.png" alt="Frame Bezel" />
 
               <!-- Previous / Next Controls -->
               <button class="gallery-modal__nav gallery-modal__nav--prev" data-modal-prev aria-label="Previous photo">

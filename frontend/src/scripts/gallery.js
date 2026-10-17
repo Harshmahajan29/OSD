@@ -15,7 +15,7 @@ export const GALLERY_ITEMS = [
     width: 165,
     height: 190,
     top: '25px',
-    left: '45px',
+    left: '55px',
     floatDuration: 6.2,
     rotationDrift: 0.9,
   },
@@ -29,7 +29,7 @@ export const GALLERY_ITEMS = [
     width: 200,
     height: 135,
     top: '20px',
-    left: '360px',
+    left: '370px',
     floatDuration: 7.2,
     rotationDrift: -0.8,
   },
@@ -43,7 +43,7 @@ export const GALLERY_ITEMS = [
     width: 165,
     height: 190,
     top: '25px',
-    left: '710px',
+    left: '720px',
     floatDuration: 6.6,
     rotationDrift: 1.1,
   },
@@ -59,7 +59,7 @@ export const GALLERY_ITEMS = [
     width: 165,
     height: 215,
     top: '195px',
-    left: '170px',
+    left: '180px',
     floatDuration: 5.8,
     rotationDrift: -0.9,
   },
@@ -73,7 +73,7 @@ export const GALLERY_ITEMS = [
     width: 220,
     height: 280,
     top: '165px',
-    left: '350px',
+    left: '360px',
     floatDuration: 8.0,
     rotationDrift: 0.6,
     isCenterpiece: true,
@@ -88,7 +88,7 @@ export const GALLERY_ITEMS = [
     width: 165,
     height: 215,
     top: '195px',
-    left: '585px',
+    left: '595px',
     floatDuration: 6.5,
     rotationDrift: 0.9,
   },
@@ -104,7 +104,7 @@ export const GALLERY_ITEMS = [
     width: 165,
     height: 220,
     top: '360px',
-    left: '45px',
+    left: '55px',
     floatDuration: 6.4,
     rotationDrift: 1.0,
   },
@@ -117,8 +117,8 @@ export const GALLERY_ITEMS = [
     frameStyle: 'gold',
     width: 200,
     height: 125,
-    top: '460px',
-    left: '360px',
+    top: '465px',
+    left: '370px',
     floatDuration: 7.0,
     rotationDrift: -0.8,
   },
@@ -132,7 +132,7 @@ export const GALLERY_ITEMS = [
     width: 165,
     height: 220,
     top: '360px',
-    left: '710px',
+    left: '720px',
     floatDuration: 6.8,
     rotationDrift: -1.0,
   },
@@ -144,17 +144,6 @@ export function initGallery(root) {
   const canvas = root.querySelector('[data-gallery-canvas]');
   const modal = root.querySelector('[data-gallery-modal]');
   if (!canvas || !modal) return;
-
-  // Style switcher buttons
-  const styleBtns = root.querySelectorAll('[data-style-set]');
-  styleBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const style = btn.getAttribute('data-style-set');
-      canvas.setAttribute('data-frame-style', style);
-      styleBtns.forEach((b) => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-    });
-  });
 
   const modalMask = modal.querySelector('[data-modal-mask]');
   const modalSlider = modal.querySelector('[data-modal-slider]');
@@ -243,7 +232,7 @@ export function initGallery(root) {
     if (modalCaption) modalCaption.textContent = item.caption;
     if (modalCounter) modalCounter.textContent = `${idx + 1} / ${GALLERY_ITEMS.length}`;
     if (modalBezel) {
-      modalBezel.src = item.frameSrc;
+      modalBezel.src = '/frames/frame-square.png';
       modalBezel.alt = `${item.title} Frame`;
     }
   }
