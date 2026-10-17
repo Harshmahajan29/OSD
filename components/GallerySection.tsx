@@ -9,6 +9,7 @@ interface GalleryPhoto {
   title: string;
   caption: string;
   frameSrc: string;
+  frameStyle: "gold" | "silver" | "bronze";
   width: number;
   height: number;
   top: string;
@@ -19,128 +20,137 @@ interface GalleryPhoto {
 }
 
 const GALLERY_ITEMS: GalleryPhoto[] = [
-  // Top Row (mirroring Sirius, Umbridge/McGonagall, Bellatrix)
+  // Top Row (Sirius, McGonagall/Umbridge, Bellatrix)
   {
     id: "mem-1",
-    imageSrc: "/gallery/event-1.jpg",
+    imageSrc: "/gallery/event-1.webp",
     title: "The Gathering",
-    caption: "Attendees kicking off the day at WCE.",
-    frameSrc: "/frames/frame-square.png",
-    width: 230,
-    height: 290,
-    top: "3%",
-    left: "7%",
+    caption: "Attendees kicking off the day at WCE Sangli.",
+    frameSrc: "/frames/frame-square.webp",
+    frameStyle: "gold",
+    width: 165,
+    height: 190,
+    top: "25px",
+    left: "55px",
     floatDuration: 6.2,
-    rotationDrift: 1.8,
+    rotationDrift: 0.9,
   },
   {
     id: "mem-2",
-    imageSrc: "/gallery/event-2.jpg",
+    imageSrc: "/gallery/event-2.webp",
     title: "Microservices Workshop",
-    caption: "Hands-on microservice architectures and deployments.",
-    frameSrc: "/frames/frame-oval.png",
-    width: 240,
-    height: 290,
-    top: "2%",
-    left: "40%",
-    floatDuration: 7.8,
-    rotationDrift: -1.5,
+    caption: "Hands-on microservice architectures, containers, and deployments.",
+    frameSrc: "/frames/frame-oval.webp",
+    frameStyle: "gold",
+    width: 200,
+    height: 135,
+    top: "20px",
+    left: "370px",
+    floatDuration: 7.2,
+    rotationDrift: -0.8,
   },
   {
     id: "mem-3",
-    imageSrc: "/gallery/event-3.jpg",
+    imageSrc: "/gallery/event-3.webp",
     title: "Git & GitHub Labs",
-    caption: "Demystifying commits, branching, and interactive rebasing.",
-    frameSrc: "/frames/frame-gothic.png",
-    width: 230,
-    height: 290,
-    top: "4%",
-    left: "73%",
-    floatDuration: 6.8,
-    rotationDrift: 2.0,
+    caption: "Demystifying commits, branching, pull requests, and interactive rebasing.",
+    frameSrc: "/frames/frame-gothic.webp",
+    frameStyle: "gold",
+    width: 165,
+    height: 190,
+    top: "25px",
+    left: "720px",
+    floatDuration: 6.6,
+    rotationDrift: 1.1,
   },
 
-  // Middle Tier (mirroring Lucius, Grand Centerpiece Dumbledore, Snape)
+  // Middle Row (Lucius Malfoy, Grand Centerpiece Dumbledore, Severus Snape)
   {
     id: "mem-4",
-    imageSrc: "/gallery/event-4.jpg",
+    imageSrc: "/gallery/event-4.webp",
     title: "Terminal Sorcery",
-    caption: "Late afternoon problem solving and mentoring.",
-    frameSrc: "/frames/frame-square.png",
-    width: 240,
-    height: 300,
-    top: "34%",
-    left: "13%",
-    floatDuration: 5.9,
-    rotationDrift: -1.9,
+    caption: "Late afternoon command-line mastery and debugging puzzles.",
+    frameSrc: "/frames/frame-square.webp",
+    frameStyle: "gold",
+    width: 165,
+    height: 215,
+    top: "195px",
+    left: "180px",
+    floatDuration: 5.8,
+    rotationDrift: -0.9,
   },
   {
     id: "mem-5",
-    imageSrc: "/gallery/event-5.jpg",
+    imageSrc: "/gallery/event-5.webp",
     title: "The Grand Assembly",
     caption: "The keynote hall alive with open source passion and energy.",
-    frameSrc: "/frames/frame-gothic.png",
-    width: 295,
-    height: 380,
-    top: "26%",
-    left: "38%",
-    floatDuration: 8.4,
-    rotationDrift: 1.2,
+    frameSrc: "/frames/frame-gothic.webp",
+    frameStyle: "silver",
+    width: 220,
+    height: 280,
+    top: "165px",
+    left: "360px",
+    floatDuration: 8.0,
+    rotationDrift: 0.6,
     isCenterpiece: true,
   },
   {
     id: "mem-6",
-    imageSrc: "/gallery/event-6.jpg",
+    imageSrc: "/gallery/event-6.webp",
     title: "Code & Collaboration",
     caption: "Peer programming, architecture debates, and lightning hacks.",
-    frameSrc: "/frames/frame-square.png",
-    width: 240,
-    height: 300,
-    top: "33%",
-    left: "69%",
-    floatDuration: 6.6,
-    rotationDrift: 1.7,
+    frameSrc: "/frames/frame-square.webp",
+    frameStyle: "gold",
+    width: 165,
+    height: 215,
+    top: "195px",
+    left: "595px",
+    floatDuration: 6.5,
+    rotationDrift: 0.9,
   },
 
-  // Bottom Row (mirroring Hagrid, Hedwig/Rita, Lockhart)
+  // Bottom Row (Hagrid, Rita/Hedwig, Gilderoy Lockhart)
   {
     id: "mem-7",
-    imageSrc: "/gallery/event-7.jpg",
-    title: "The Mentorship Circle",
-    caption: "Senior engineers guiding newcomers through their first contributions.",
-    frameSrc: "/frames/frame-square.png",
-    width: 250,
-    height: 310,
-    top: "66%",
-    left: "9%",
+    imageSrc: "/gallery/event-7.webp",
+    title: "The Learning Circle",
+    caption: "Guiding newcomers through their first contributions.",
+    frameSrc: "/frames/frame-square.webp",
+    frameStyle: "bronze",
+    width: 165,
+    height: 220,
+    top: "360px",
+    left: "55px",
     floatDuration: 6.4,
-    rotationDrift: 2.1,
+    rotationDrift: 1.0,
   },
   {
     id: "mem-8",
-    imageSrc: "/gallery/event-8.jpg",
+    imageSrc: "/gallery/event-8.webp",
     title: "Open Source Odyssey",
     caption: "Exploring distributed systems and real-world Linux tools.",
-    frameSrc: "/frames/frame-oval.png",
-    width: 235,
-    height: 290,
-    top: "68%",
-    left: "40.5%",
-    floatDuration: 7.4,
-    rotationDrift: -1.6,
+    frameSrc: "/frames/frame-oval.webp",
+    frameStyle: "gold",
+    width: 200,
+    height: 125,
+    top: "465px",
+    left: "370px",
+    floatDuration: 7.0,
+    rotationDrift: -0.8,
   },
   {
     id: "mem-9",
-    imageSrc: "/gallery/event-9.jpg",
+    imageSrc: "/gallery/event-9.webp",
     title: "The Finale",
     caption: "Certificates, swags, and closing open source celebrations.",
-    frameSrc: "/frames/frame-gothic.png",
-    width: 240,
-    height: 300,
-    top: "65%",
-    left: "72%",
-    floatDuration: 6.9,
-    rotationDrift: -1.8,
+    frameSrc: "/frames/frame-gothic.webp",
+    frameStyle: "gold",
+    width: 165,
+    height: 220,
+    top: "360px",
+    left: "720px",
+    floatDuration: 6.8,
+    rotationDrift: -1.0,
   },
 ];
 
@@ -199,13 +209,13 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="gallery" className="relative w-full min-h-[130vh] bg-[#0E081F] overflow-hidden select-none py-20 px-4">
+    <section id="gallery" className="relative w-full min-h-[110vh] bg-[#0E081F] overflow-hidden select-none py-16 px-4">
       {/* Background glow effects */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-purple-900/20 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 left-1/3 w-[450px] h-[450px] bg-amber-600/10 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Section Header */}
-      <div className="relative z-10 text-center mb-10 flex flex-col items-center">
+      <div className="relative z-10 text-center mb-9 flex flex-col items-center">
         <p className="flex items-center gap-3 text-[#ffd15c] text-base font-semibold mb-3">
           <img
             src="/assets/images/lantern-icon.webp"
@@ -216,71 +226,90 @@ export default function GallerySection() {
           />
           Stop 3: Memory Lane
         </p>
-        <h2 className="text-4xl md:text-5xl font-normal text-[#f6f0ff] tracking-normal font-serif">
+        <h2 className="text-4xl md:text-5xl font-normal text-[#f6f0ff] tracking-normal font-serif mb-3">
           The Hall of Memories
         </h2>
-        <p className="text-[#d8ccf0] text-sm md:text-base mt-3 max-w-[56ch]">
+        <p className="text-[#d8ccf0] text-sm md:text-base max-w-[56ch]">
           Click any floating frame to view
         </p>
       </div>
 
-      {/* Salon Wall Floating Canvas */}
-      <div ref={containerRef} className="relative w-full max-w-[1240px] mx-auto h-[1050px]">
-        {GALLERY_ITEMS.map((item, index) => (
-          <motion.div
-            key={item.id}
-            drag
-            dragConstraints={containerRef}
-            dragElastic={0.2}
-            whileHover={{ scale: 1.05, zIndex: 50 }}
-            whileTap={{ scale: 0.98 }}
-            animate={{
-              y: [0, -16, 14, 0],
-              rotate: [0, item.rotationDrift, -item.rotationDrift, 0],
-            }}
-            transition={{
-              y: {
-                duration: item.floatDuration,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-              rotate: {
-                duration: item.floatDuration * 1.25,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-            }}
-            onClick={() => {
-              setDirection(0);
-              setSelectedIndex(index);
-            }}
-            style={{
-              position: "absolute",
-              top: item.top,
-              left: item.left,
-              width: item.width,
-              height: item.height,
-              zIndex: item.isCenterpiece ? 15 : 10,
-            }}
-            className="cursor-pointer flex items-center justify-center filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.65)] hover:drop-shadow-[0_20px_40px_rgba(255,122,0,0.3)] transition-all"
-          >
-            {/* Inner Photo */}
-            <div className="absolute w-[62%] h-[66%] rounded-sm overflow-hidden z-10 bg-black/60">
-              <img
-                src={item.imageSrc}
-                alt={item.title}
-                className="w-full h-full object-cover pointer-events-none"
-              />
-            </div>
+      {/* Pinned Salon Wall Exhibition Frame */}
+      <div className="relative w-full max-w-[1200px] mx-auto flex justify-center px-4 mt-[90px] overflow-visible">
+        <div
+          ref={containerRef}
+          className="relative w-[940px] h-[620px] rounded-[18px] bg-[radial-gradient(circle_at_50%_32%,rgba(255,180,50,0.09)_0%,transparent_60%),radial-gradient(circle_at_18%_78%,rgba(138,77,255,0.12)_0%,transparent_50%),radial-gradient(circle_at_82%_78%,rgba(255,122,0,0.08)_0%,transparent_50%),linear-gradient(145deg,#160e29_0%,#0d071b_50%,#060210_100%)] shadow-[0_35px_100px_rgba(0,0,0,0.95),0_0_50px_rgba(255,122,0,0.15),inset_0_0_100px_rgba(0,0,0,0.92)] shrink-0 origin-top scale-[0.66] -mb-[210px]"
+        >
+          {/* Master Rectangular Frame Overlay */}
+          <img
+            src="/frames/frame-square.webp"
+            alt="Master Rectangular Frame"
+            className="absolute -top-[130px] -left-[190px] w-[1320px] max-w-none h-[885px] max-h-none object-fill pointer-events-none z-25 filter drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] drop-shadow-[0_0_35px_rgba(255,122,0,0.22)]"
+          />
 
-            {/* Clay Frame Overlay */}
-            <img
-              src={item.frameSrc}
-              alt="Clay Frame"
-              className="absolute inset-0 w-full h-full object-contain pointer-events-none z-20"
-            />
-          </motion.div>
-        ))}
+          {GALLERY_ITEMS.map((item, index) => (
+            <motion.div
+              key={item.id}
+              drag
+              dragConstraints={containerRef}
+              dragElastic={0.2}
+              whileHover={{ scale: 1.08, y: -4, zIndex: 55 }}
+              whileTap={{ scale: 0.98 }}
+              animate={{
+                y: [0, -6, 4, 0],
+                rotate: [0, item.rotationDrift, -item.rotationDrift, 0],
+              }}
+              transition={{
+                y: {
+                  duration: item.floatDuration,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
+                rotate: {
+                  duration: item.floatDuration * 1.25,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
+              }}
+              onClick={() => {
+                setDirection(0);
+                setSelectedIndex(index);
+              }}
+              style={{
+                position: "absolute",
+                top: item.top,
+                left: item.left,
+                width: item.width,
+                height: item.height,
+                zIndex: item.isCenterpiece ? 15 : 10,
+              }}
+              className="cursor-pointer flex items-center justify-center filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] hover:drop-shadow-[0_22px_50px_rgba(255,190,50,0.55)] transition-all"
+            >
+              {/* Hanging Pin */}
+              <span className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[radial-gradient(circle_at_35%_35%,#fff9d6_0%,#ffd700_40%,#b8860b_80%,#59400f_100%)] shadow-[0_3px_6px_rgba(0,0,0,0.8),0_0_8px_rgba(255,215,0,0.6)] z-25 pointer-events-none" />
+
+              {/* Inner Photo */}
+              <div className="absolute inset-0 w-full h-full rounded-sm overflow-hidden z-10 bg-[#0c071a] shadow-[inset_0_0_20px_rgba(0,0,0,0.75)]">
+                <img
+                  src={item.imageSrc}
+                  alt={item.title}
+                  className="w-full h-full object-cover object-[center_25%] pointer-events-none transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+
+              {/* Ornate Gilded/Silver Frame Bezel */}
+              <div
+                className={`absolute inset-0 pointer-events-none z-20 ${
+                  item.frameStyle === "silver"
+                    ? "border-[9px] border-[#b0b8c2] shadow-[0_18px_45px_rgba(0,0,0,0.95),0_0_25px_rgba(200,220,255,0.25),inset_0_0_0_2px_#ffffff,inset_0_0_0_5px_#262a30,inset_0_0_14px_rgba(0,0,0,0.85)]"
+                    : item.frameStyle === "bronze"
+                    ? "border-[7px] border-[#9c6e3b] shadow-[0_12px_28px_rgba(0,0,0,0.85),inset_0_0_0_2px_#e3cbb1,inset_0_0_0_4px_#42260d,inset_0_0_10px_rgba(0,0,0,0.8)]"
+                    : "border-[7px] border-[#d4af37] shadow-[0_12px_28px_rgba(0,0,0,0.85),inset_0_0_0_2px_#fff3bf,inset_0_0_0_4px_#5a3e0b,inset_0_0_10px_rgba(0,0,0,0.8)]"
+                }`}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Lightbox Slider Modal */}
@@ -290,7 +319,7 @@ export default function GallerySection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4"
             onClick={() => setSelectedIndex(null)}
           >
             <motion.div
@@ -311,9 +340,9 @@ export default function GallerySection() {
               </button>
 
               {/* Slider Viewport with Fixed Frame */}
-              <div className="relative w-[340px] h-[430px] md:w-[420px] md:h-[520px] flex items-center justify-center filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]">
+              <div className="relative w-[320px] h-[220px] md:w-[520px] md:h-[350px] flex items-center justify-center filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]">
                 {/* Sliding Photo Mask */}
-                <div className="absolute w-[62%] h-[66%] rounded-sm overflow-hidden z-10 bg-black/50">
+                <div className="absolute w-[74%] h-[67%] rounded-sm overflow-hidden z-10 bg-black/50">
                   <AnimatePresence initial={false} custom={direction} mode="popLayout">
                     <motion.img
                       key={selectedIndex}
@@ -338,7 +367,7 @@ export default function GallerySection() {
 
                 {/* Frame Bezel */}
                 <img
-                  src={GALLERY_ITEMS[selectedIndex].frameSrc}
+                  src="/frames/frame-square.webp"
                   alt="Frame Bezel"
                   className="absolute inset-0 w-full h-full object-contain pointer-events-none z-20"
                 />
