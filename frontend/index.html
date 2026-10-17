@@ -474,197 +474,242 @@
           </p>
           <h2 class="stop__title">The Hall of Memories</h2>
           <p class="stop__text">Click any floating frame to view</p>
+
+          <div class="gallery-style-toggle" role="group" aria-label="Portrait Frame Style">
+            <button type="button" class="gallery-style-btn is-active" data-style-set="grand">
+              <span>🏛️</span> Grand Salon
+            </button>
+            <button type="button" class="gallery-style-btn" data-style-set="clay">
+              <span>🎃</span> Spooky Clay
+            </button>
+          </div>
         </div>
 
-        <!-- Floating Canvas with Anti-Gravity Portraits (Salon Wall Layout) -->
-        <div class="gallery-canvas" data-gallery-canvas>
-          <!-- Portrait 1 (Top-Left: The Gathering) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="0"
-            style="width: 230px; height: 290px; top: 3%; left: 7%; --float-dur: 6.2s; --rot-drift: 1.8deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-1.jpg" alt="The Gathering" loading="lazy" decoding="async" />
-              </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-square.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
+        <!-- Pinned Salon Wall Exhibition Frame -->
+        <div class="gallery-wall-wrapper">
+          <div class="gallery-wall-frame" data-gallery-canvas data-frame-style="grand">
+            <!-- Pinned Brass Plaque -->
+            <div class="gallery-wall-plaque">
+              <span class="gallery-wall-plaque__stud">✦</span>
+              <span class="gallery-wall-plaque__title">THE HALL OF MEMORIES</span>
+              <span class="gallery-wall-plaque__stud">✦</span>
             </div>
-          </div>
 
-          <!-- Portrait 2 (Top-Center: Microservices Workshop) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="1"
-            style="width: 240px; height: 290px; top: 2%; left: 40%; --float-dur: 7.8s; --rot-drift: -1.5deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-2.jpg" alt="Microservices Workshop" loading="lazy" decoding="async" />
+            <!-- Portrait 1 (Top-Left: The Gathering - Sirius Black Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="0"
+              data-frame="gold"
+              style="width: 165px; height: 190px; top: 25px; left: 45px; --float-dist: 5px; --float-dur: 6.2s; --rot-drift: 0.9deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-1.jpg" alt="The Gathering" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-square.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-oval.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
-          </div>
 
-          <!-- Portrait 3 (Top-Right: Git & GitHub Labs) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="2"
-            style="width: 230px; height: 290px; top: 4%; left: 73%; --float-dur: 6.8s; --rot-drift: 2.0deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-3.jpg" alt="Git & GitHub Labs" loading="lazy" decoding="async" />
+            <!-- Portrait 2 (Top-Center: Microservices Workshop - McGonagall/Umbridge Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="1"
+              data-frame="gold"
+              style="width: 200px; height: 135px; top: 20px; left: 360px; --float-dist: 6px; --float-dur: 7.2s; --rot-drift: -0.8deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-2.jpg" alt="Microservices Workshop" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-oval.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-gothic.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
-          </div>
 
-          <!-- Portrait 4 (Mid-Left: Terminal Sorcery) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="3"
-            style="width: 240px; height: 300px; top: 34%; left: 13%; --float-dur: 5.9s; --rot-drift: -1.9deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-4.jpg" alt="Terminal Sorcery" loading="lazy" decoding="async" />
+            <!-- Portrait 3 (Top-Right: Git & GitHub Labs - Bellatrix/Hooch Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="2"
+              data-frame="gold"
+              style="width: 165px; height: 190px; top: 25px; left: 710px; --float-dist: 5px; --float-dur: 6.6s; --rot-drift: 1.1deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-3.jpg" alt="Git & GitHub Labs" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-gothic.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-square.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
-          </div>
 
-          <!-- Portrait 5 (GRAND CENTERPIECE: The Grand Assembly) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="4"
-            data-centerpiece="true"
-            style="width: 295px; height: 380px; top: 26%; left: 38%; z-index: 15; --float-dur: 8.4s; --rot-drift: 1.2deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-5.jpg" alt="The Grand Assembly" loading="lazy" decoding="async" />
+            <!-- Portrait 4 (Mid-Left: Terminal Sorcery - Lucius Malfoy Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="3"
+              data-frame="gold"
+              style="width: 165px; height: 215px; top: 195px; left: 170px; --float-dist: 5px; --float-dur: 5.8s; --rot-drift: -0.9deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-4.jpg" alt="Terminal Sorcery" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-square.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-gothic.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
-          </div>
 
-          <!-- Portrait 6 (Mid-Right: Code & Collaboration) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="5"
-            style="width: 240px; height: 300px; top: 33%; left: 69%; --float-dur: 6.6s; --rot-drift: 1.7deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-6.jpg" alt="Code & Collaboration" loading="lazy" decoding="async" />
+            <!-- Portrait 5 (GRAND CENTERPIECE: The Grand Assembly - Dumbledore Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="4"
+              data-centerpiece="true"
+              data-frame="silver"
+              style="width: 220px; height: 280px; top: 165px; left: 350px; z-index: 15; --float-dist: 4px; --float-dur: 8.0s; --rot-drift: 0.6deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-5.jpg" alt="The Grand Assembly" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-gothic.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-square.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
-          </div>
 
-          <!-- Portrait 7 (Bottom-Left: The Mentorship Circle) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="6"
-            style="width: 250px; height: 310px; top: 66%; left: 9%; --float-dur: 6.4s; --rot-drift: 2.1deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-7.jpg" alt="The Mentorship Circle" loading="lazy" decoding="async" />
+            <!-- Portrait 6 (Mid-Right: Code & Collaboration - Severus Snape Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="5"
+              data-frame="gold"
+              style="width: 165px; height: 215px; top: 195px; left: 585px; --float-dist: 5px; --float-dur: 6.5s; --rot-drift: 0.9deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-6.jpg" alt="Code & Collaboration" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-square.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-square.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
-          </div>
 
-          <!-- Portrait 8 (Bottom-Center: Open Source Odyssey) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="7"
-            style="width: 235px; height: 290px; top: 68%; left: 40.5%; --float-dur: 7.4s; --rot-drift: -1.6deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-8.jpg" alt="Open Source Odyssey" loading="lazy" decoding="async" />
+            <!-- Portrait 7 (Bottom-Left: The Mentorship Circle - Hagrid Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="6"
+              data-frame="bronze"
+              style="width: 165px; height: 220px; top: 360px; left: 45px; --float-dist: 6px; --float-dur: 6.4s; --rot-drift: 1.0deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-7.jpg" alt="The Mentorship Circle" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-square.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-oval.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
-          </div>
 
-          <!-- Portrait 9 (Bottom-Right: The Finale) -->
-          <div
-            class="gallery-portrait"
-            data-gallery-item
-            data-index="8"
-            style="width: 240px; height: 300px; top: 65%; left: 72%; --float-dur: 6.9s; --rot-drift: -1.8deg;"
-          >
-            <div class="gallery-portrait__float">
-              <div class="gallery-portrait__photo">
-                <img src="/gallery/event-9.jpg" alt="The Finale" loading="lazy" decoding="async" />
+            <!-- Portrait 8 (Bottom-Center: Open Source Odyssey - Rita/Hedwig Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="7"
+              data-frame="gold"
+              style="width: 200px; height: 125px; top: 460px; left: 360px; --float-dist: 5px; --float-dur: 7.0s; --rot-drift: -0.8deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-8.jpg" alt="Open Source Odyssey" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-oval.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <img
-                class="gallery-portrait__frame"
-                src="/frames/frame-gothic.png"
-                alt="Clay Frame"
-                loading="lazy"
-                decoding="async"
-              />
+            </div>
+
+            <!-- Portrait 9 (Bottom-Right: The Finale - Gilderoy Lockhart Position) -->
+            <div
+              class="gallery-portrait"
+              data-gallery-item
+              data-index="8"
+              data-frame="gold"
+              style="width: 165px; height: 220px; top: 360px; left: 710px; --float-dist: 6px; --float-dur: 6.8s; --rot-drift: -1.0deg;"
+            >
+              <div class="gallery-portrait__float">
+                <span class="gallery-portrait__pin" aria-hidden="true"></span>
+                <div class="gallery-portrait__photo">
+                  <img src="/gallery/event-9.jpg" alt="The Finale" loading="lazy" decoding="async" />
+                </div>
+                <div class="gallery-portrait__bezel" aria-hidden="true"></div>
+                <img
+                  class="gallery-portrait__clay-frame"
+                  src="/frames/frame-gothic.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
         </div>

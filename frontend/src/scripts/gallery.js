@@ -1,22 +1,23 @@
 /**
  * Anti-Gravity Floating Photo Wall & Lightbox Slider
- * Arranged in a salon-wall composition inspired by the grand portrait gallery
+ * Arranged in a pinned salon-wall composition inspired by the grand portrait gallery
  */
 
 export const GALLERY_ITEMS = [
-  // Top Row (Sirius, Umbridge/McGonagall, Bellatrix)
+  // Top Row (Sirius, McGonagall/Umbridge, Bellatrix)
   {
     id: 'mem-1',
     imageSrc: '/gallery/event-1.jpg',
     title: 'The Gathering',
     caption: 'Attendees kicking off the day at WCE Sangli.',
     frameSrc: '/frames/frame-square.png',
-    width: 230,
-    height: 290,
-    top: '3%',
-    left: '7%',
+    frameStyle: 'gold',
+    width: 165,
+    height: 190,
+    top: '25px',
+    left: '45px',
     floatDuration: 6.2,
-    rotationDrift: 1.8,
+    rotationDrift: 0.9,
   },
   {
     id: 'mem-2',
@@ -24,12 +25,13 @@ export const GALLERY_ITEMS = [
     title: 'Microservices Workshop',
     caption: 'Hands-on microservice architectures, containers, and deployments.',
     frameSrc: '/frames/frame-oval.png',
-    width: 240,
-    height: 290,
-    top: '2%',
-    left: '40%',
-    floatDuration: 7.8,
-    rotationDrift: -1.5,
+    frameStyle: 'gold',
+    width: 200,
+    height: 135,
+    top: '20px',
+    left: '360px',
+    floatDuration: 7.2,
+    rotationDrift: -0.8,
   },
   {
     id: 'mem-3',
@@ -37,27 +39,29 @@ export const GALLERY_ITEMS = [
     title: 'Git & GitHub Labs',
     caption: 'Demystifying commits, branching, pull requests, and interactive rebasing.',
     frameSrc: '/frames/frame-gothic.png',
-    width: 230,
-    height: 290,
-    top: '4%',
-    left: '73%',
-    floatDuration: 6.8,
-    rotationDrift: 2.0,
+    frameStyle: 'gold',
+    width: 165,
+    height: 190,
+    top: '25px',
+    left: '710px',
+    floatDuration: 6.6,
+    rotationDrift: 1.1,
   },
 
-  // Middle Tier (Lucius, Grand Centerpiece Dumbledore, Snape)
+  // Middle Row (Lucius Malfoy, Grand Centerpiece Dumbledore, Severus Snape)
   {
     id: 'mem-4',
     imageSrc: '/gallery/event-4.jpg',
     title: 'Terminal Sorcery',
     caption: 'Late afternoon command-line mastery and debugging puzzles.',
     frameSrc: '/frames/frame-square.png',
-    width: 240,
-    height: 300,
-    top: '34%',
-    left: '13%',
-    floatDuration: 5.9,
-    rotationDrift: -1.9,
+    frameStyle: 'gold',
+    width: 165,
+    height: 215,
+    top: '195px',
+    left: '170px',
+    floatDuration: 5.8,
+    rotationDrift: -0.9,
   },
   {
     id: 'mem-5',
@@ -65,12 +69,13 @@ export const GALLERY_ITEMS = [
     title: 'The Grand Assembly',
     caption: 'The keynote hall alive with open source passion and energy.',
     frameSrc: '/frames/frame-gothic.png',
-    width: 295,
-    height: 380,
-    top: '26%',
-    left: '38%',
-    floatDuration: 8.4,
-    rotationDrift: 1.2,
+    frameStyle: 'silver',
+    width: 220,
+    height: 280,
+    top: '165px',
+    left: '350px',
+    floatDuration: 8.0,
+    rotationDrift: 0.6,
     isCenterpiece: true,
   },
   {
@@ -79,27 +84,29 @@ export const GALLERY_ITEMS = [
     title: 'Code & Collaboration',
     caption: 'Peer programming, architecture debates, and lightning hacks.',
     frameSrc: '/frames/frame-square.png',
-    width: 240,
-    height: 300,
-    top: '33%',
-    left: '69%',
-    floatDuration: 6.6,
-    rotationDrift: 1.7,
+    frameStyle: 'gold',
+    width: 165,
+    height: 215,
+    top: '195px',
+    left: '585px',
+    floatDuration: 6.5,
+    rotationDrift: 0.9,
   },
 
-  // Bottom Row (Hagrid, Hedwig/Rita, Lockhart)
+  // Bottom Row (Hagrid, Rita/Hedwig, Gilderoy Lockhart)
   {
     id: 'mem-7',
     imageSrc: '/gallery/event-7.jpg',
     title: 'The Mentorship Circle',
     caption: 'Senior engineers guiding newcomers through their first contributions.',
     frameSrc: '/frames/frame-square.png',
-    width: 250,
-    height: 310,
-    top: '66%',
-    left: '9%',
+    frameStyle: 'bronze',
+    width: 165,
+    height: 220,
+    top: '360px',
+    left: '45px',
     floatDuration: 6.4,
-    rotationDrift: 2.1,
+    rotationDrift: 1.0,
   },
   {
     id: 'mem-8',
@@ -107,12 +114,13 @@ export const GALLERY_ITEMS = [
     title: 'Open Source Odyssey',
     caption: 'Exploring distributed systems and real-world Linux tools.',
     frameSrc: '/frames/frame-oval.png',
-    width: 235,
-    height: 290,
-    top: '68%',
-    left: '40.5%',
-    floatDuration: 7.4,
-    rotationDrift: -1.6,
+    frameStyle: 'gold',
+    width: 200,
+    height: 125,
+    top: '460px',
+    left: '360px',
+    floatDuration: 7.0,
+    rotationDrift: -0.8,
   },
   {
     id: 'mem-9',
@@ -120,12 +128,13 @@ export const GALLERY_ITEMS = [
     title: 'The Finale',
     caption: 'Certificates, swags, and closing open source celebrations.',
     frameSrc: '/frames/frame-gothic.png',
-    width: 240,
-    height: 300,
-    top: '65%',
-    left: '72%',
-    floatDuration: 6.9,
-    rotationDrift: -1.8,
+    frameStyle: 'gold',
+    width: 165,
+    height: 220,
+    top: '360px',
+    left: '710px',
+    floatDuration: 6.8,
+    rotationDrift: -1.0,
   },
 ];
 
@@ -135,6 +144,17 @@ export function initGallery(root) {
   const canvas = root.querySelector('[data-gallery-canvas]');
   const modal = root.querySelector('[data-gallery-modal]');
   if (!canvas || !modal) return;
+
+  // Style switcher buttons
+  const styleBtns = root.querySelectorAll('[data-style-set]');
+  styleBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const style = btn.getAttribute('data-style-set');
+      canvas.setAttribute('data-frame-style', style);
+      styleBtns.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  });
 
   const modalMask = modal.querySelector('[data-modal-mask]');
   const modalSlider = modal.querySelector('[data-modal-slider]');

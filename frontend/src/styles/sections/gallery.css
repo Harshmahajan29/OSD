@@ -1,21 +1,20 @@
 /* ========================================================
    GALLERY SECTION: The Hall of Memories
-   Anti-Gravity Floating Salon Wall + Lightbox Slider
+   Pinned Salon Wall Exhibition + Lightbox Slider
    ======================================================== */
 
 .gallery-section {
   position: relative;
   width: 100%;
-  min-height: 1220px;
   background:
-    radial-gradient(ellipse 85% 65% at 50% 45%, #190e36 0%, #0e081f 65%, #070311 100%);
+    radial-gradient(ellipse 90% 70% at 50% 45%, #180d34 0%, #0e081f 65%, #070311 100%);
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
-  padding: 90px 0 120px;
+  padding: 48px 0 64px;
 }
 
-/* Background atmospheric glow effects */
+/* Atmospheric ambient glow */
 .gallery-glow {
   position: absolute;
   pointer-events: none;
@@ -26,18 +25,18 @@
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(750px, 92vw);
-  height: min(750px, 92vw);
-  background: radial-gradient(circle, rgba(138, 77, 255, 0.22) 0%, rgba(88, 28, 135, 0.12) 45%, transparent 70%);
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
+  background: radial-gradient(circle, rgba(138, 77, 255, 0.2) 0%, rgba(88, 28, 135, 0.1) 45%, transparent 70%);
   filter: blur(140px);
 }
 
 .gallery-glow--amber {
   bottom: 12%;
   left: 35%;
-  width: min(450px, 75vw);
-  height: min(450px, 75vw);
-  background: radial-gradient(circle, rgba(255, 122, 0, 0.18) 0%, rgba(217, 119, 6, 0.08) 50%, transparent 70%);
+  width: min(400px, 70vw);
+  height: min(400px, 70vw);
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.15) 0%, rgba(217, 119, 6, 0.06) 50%, transparent 70%);
   filter: blur(95px);
 }
 
@@ -46,7 +45,7 @@
   position: relative;
   z-index: 10;
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,14 +68,135 @@
   margin-inline: auto;
 }
 
-/* Salon Wall Floating Anti-Gravity Canvas */
-.gallery-canvas {
+/* Style Toggle Controls */
+.gallery-style-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(18, 10, 34, 0.85);
+  border: 1px solid rgba(255, 209, 92, 0.25);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  margin-top: 18px;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-style-btn {
+  background: none;
+  border: none;
+  color: var(--c-text-muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gallery-style-btn:hover {
+  color: #ffd15c;
+}
+
+.gallery-style-btn.is-active {
+  background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+  color: #120a04;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.45);
+}
+
+/* Pinned Salon Wall Board / Canvas */
+.gallery-wall-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1240px;
+  max-width: 980px;
   margin-inline: auto;
-  height: 1020px;
+  display: flex;
+  justify-content: center;
+  padding-inline: 16px;
+}
+
+/* Grand Master Exhibition Frame */
+.gallery-wall-frame {
+  position: relative;
+  width: 920px;
+  height: 610px;
+  border-radius: 14px;
+  border: 12px solid #23160a;
+  outline: 3px solid #d4af37;
+  outline-offset: -7px;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(255, 180, 50, 0.09) 0%, transparent 60%),
+    radial-gradient(circle at 18% 78%, rgba(138, 77, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 82% 78%, rgba(255, 122, 0, 0.08) 0%, transparent 50%),
+    linear-gradient(145deg, #160e29 0%, #0d071b 50%, #060210 100%);
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.95),
+    0 0 50px rgba(255, 122, 0, 0.15),
+    inset 0 0 100px rgba(0, 0, 0, 0.92);
   touch-action: none;
+  flex-shrink: 0;
+}
+
+/* Master Frame Brass Corner Brackets */
+.gallery-wall-frame::before,
+.gallery-wall-frame::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 3px solid #d4af37;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.gallery-wall-frame::before {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.gallery-wall-frame::after {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Engraved Brass Title Plaque */
+.gallery-wall-plaque {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 22px;
+  background: linear-gradient(180deg, #d4af37 0%, #aa820a 50%, #5e4606 100%);
+  border: 1px solid #ffe899;
+  border-radius: 4px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  color: #1a1005;
+  font-family: var(--font-display), 'Georgia', serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.gallery-wall-plaque__stud {
+  color: #fff4cc;
+  font-size: 0.75rem;
 }
 
 /* Individual Floating Portrait Item */
@@ -86,27 +206,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.65));
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.85));
   transition:
     transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
     filter 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
   will-change: transform;
 }
 
-/* Grand Centerpiece Styling (Dumbledore position) */
+/* Hanging Pin (stud that pins portrait to the board) */
+.gallery-portrait__pin {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff9d6 0%, #ffd700 40%, #b8860b 80%, #59400f 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8), 0 0 8px rgba(255, 215, 0, 0.6);
+  z-index: 25;
+  pointer-events: none;
+}
+
+/* Centerpiece Portrait (Dumbledore position) */
 .gallery-portrait[data-centerpiece="true"] {
   z-index: 15;
   filter:
-    drop-shadow(0 20px 45px rgba(0, 0, 0, 0.85))
-    drop-shadow(0 0 30px rgba(255, 122, 0, 0.25));
+    drop-shadow(0 20px 42px rgba(0, 0, 0, 0.9))
+    drop-shadow(0 0 24px rgba(255, 122, 0, 0.28));
 }
 
 .gallery-portrait:hover {
-  z-index: 50 !important;
-  transform: scale(1.05) !important;
+  z-index: 55 !important;
+  transform: scale(1.08) translateY(-4px) !important;
   filter:
-    drop-shadow(0 22px 45px rgba(0, 0, 0, 0.9))
-    drop-shadow(0 0 28px rgba(255, 122, 0, 0.38));
+    drop-shadow(0 22px 50px rgba(0, 0, 0, 0.98))
+    drop-shadow(0 0 32px rgba(255, 190, 50, 0.55));
 }
 
 .gallery-portrait:active,
@@ -115,7 +250,7 @@
   transform: scale(0.98);
 }
 
-/* Anti-gravity float wrapper that executes bobbing & rotation drift */
+/* Anti-gravity float wrapper that executes subtle bobbing & rotation drift */
 .gallery-portrait__float {
   width: 100%;
   height: 100%;
@@ -132,10 +267,10 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-16px);
+    transform: translateY(calc(var(--float-dist, 6px) * -1));
   }
   100% {
-    transform: translateY(14px);
+    transform: translateY(calc(var(--float-dist, 6px) * 0.7));
   }
 }
 
@@ -144,46 +279,148 @@
     rotate: 0deg;
   }
   50% {
-    rotate: var(--rot-drift, 1.8deg);
+    rotate: var(--rot-drift, 0.9deg);
   }
   100% {
-    rotate: calc(var(--rot-drift, 1.8deg) * -1);
+    rotate: calc(var(--rot-drift, 0.9deg) * -1);
   }
 }
 
-/* Inner Photo Layer (sitting underneath the clay frame) */
+/* Inner Photo Layer */
 .gallery-portrait__photo {
   position: absolute;
-  width: 62%;
-  height: 66%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 2px;
   z-index: 10;
   background-color: #0c071a;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.75);
 }
 
 .gallery-portrait__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   pointer-events: none;
   user-select: none;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: contrast(1.04) saturate(1.08) brightness(1.02);
 }
 
 .gallery-portrait:hover .gallery-portrait__photo img {
-  transform: scale(1.04);
+  transform: scale(1.06);
+  filter: contrast(1.08) saturate(1.15) brightness(1.08);
 }
 
-/* 3D Clay Frame Bezel Overlay */
-.gallery-portrait__frame {
+/* ========================================================
+   ORNATE FRAME STYLING (Grand Salon Mode - Reference Look)
+   ======================================================== */
+
+.gallery-portrait__bezel {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
   pointer-events: none;
   z-index: 20;
+}
+
+/* Ornate Gilded Gold Baroque Frame */
+.gallery-portrait[data-frame="gold"] .gallery-portrait__bezel {
+  border: 7px solid #d4af37;
+  border-image: linear-gradient(135deg, #ffe28a 0%, #d4af37 25%, #8b6508 50%, #f3d078 75%, #5c430e 100%) 8;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 2px #fff3bf,
+    inset 0 0 0 4px #5a3e0b,
+    inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Ornate Antique Silver Baroque Frame (Grand Centerpiece) */
+.gallery-portrait[data-frame="silver"] .gallery-portrait__bezel {
+  border: 9px solid #b0b8c2;
+  border-image: linear-gradient(135deg, #ffffff 0%, #c4cbd4 25%, #606770 50%, #e1e5eb 75%, #2c3036 100%) 9;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.95),
+    0 0 25px rgba(200, 220, 255, 0.25),
+    inset 0 0 0 2px #ffffff,
+    inset 0 0 0 5px #262a30,
+    inset 0 0 14px rgba(0, 0, 0, 0.85);
+}
+
+/* Ornate Antique Bronze Frame */
+.gallery-portrait[data-frame="bronze"] .gallery-portrait__bezel {
+  border: 7px solid #9c6e3b;
+  border-image: linear-gradient(135deg, #cca87c 0%, #9c6e3b 25%, #523516 50%, #b88f5d 75%, #3b2209 100%) 8;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 2px #e3cbb1,
+    inset 0 0 0 4px #42260d,
+    inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Ornate Frame Corner Filigree Accents */
+.gallery-portrait__bezel::before,
+.gallery-portrait__bezel::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffd700;
+  pointer-events: none;
+}
+
+.gallery-portrait[data-frame="silver"] .gallery-portrait__bezel::before,
+.gallery-portrait[data-frame="silver"] .gallery-portrait__bezel::after {
+  border-color: #ffffff;
+}
+
+.gallery-portrait[data-frame="bronze"] .gallery-portrait__bezel::before,
+.gallery-portrait[data-frame="bronze"] .gallery-portrait__bezel::after {
+  border-color: #cca87c;
+}
+
+.gallery-portrait__bezel::before {
+  top: -3px;
+  left: -3px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.gallery-portrait__bezel::after {
+  bottom: -3px;
+  right: -3px;
+  border-left: none;
+  border-top: none;
+}
+
+/* 3D Clay Frame Bezel Overlay (Shown only in Clay Mode) */
+.gallery-portrait__clay-frame {
+  position: absolute;
+  inset: -12%;
+  width: 124%;
+  height: 124%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 22;
+  display: none;
+}
+
+/* Style Switcher Behavior: Grand Salon vs Spooky Clay */
+.gallery-wall-frame[data-frame-style="clay"] .gallery-portrait__bezel {
+  display: none;
+}
+
+.gallery-wall-frame[data-frame-style="clay"] .gallery-portrait__clay-frame {
+  display: block;
+}
+
+.gallery-wall-frame[data-frame-style="clay"] .gallery-portrait__photo {
+  inset: 16%;
+  width: 68%;
+  height: 68%;
+  border-radius: 4px;
 }
 
 /* ========================================================
@@ -197,7 +434,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.82);
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 20px;
@@ -233,7 +470,7 @@
   right: 0;
   background: none;
   border: none;
-  color: rgba(254, 240, 138, 0.85); /* amber-200/80 */
+  color: rgba(254, 240, 138, 0.85);
   font-family: var(--font-body), sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
@@ -300,6 +537,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   user-select: none;
   -webkit-user-drag: none;
   transition: transform 0.35s cubic-bezier(0.2, 0.85, 0.3, 1), opacity 0.25s ease;
@@ -380,12 +618,12 @@
   font-family: var(--font-display), 'Georgia', serif;
   font-size: 1.35rem;
   font-weight: 700;
-  color: #fef08a; /* amber-200 */
+  color: #fef08a;
 }
 
 .gallery-modal__caption {
   font-size: 0.92rem;
-  color: rgba(216, 180, 254, 0.85); /* purple-300 / 80 */
+  color: rgba(216, 180, 254, 0.85);
   margin-top: 6px;
   line-height: 1.45;
 }
@@ -408,34 +646,15 @@
   animation-play-state: paused !important;
 }
 
-/* Responsive Canvas adjustments for mobile & tablet */
-@media (max-width: 860px) {
-  .gallery-section {
-    min-height: auto;
+/* Responsive scaling for tablet & mobile so the framed wall stays intact */
+/* Responsive scaling for tablet & mobile so the framed wall stays intact */
+@media (max-width: 960px) {
+  .gallery-wall-wrapper {
+    overflow: visible;
   }
-
-  .gallery-canvas {
-    height: auto;
-    min-height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 16px 8px;
-  }
-
-  .gallery-portrait {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 210px !important;
-    height: 270px !important;
-    margin: 6px;
-  }
-
-  .gallery-portrait[data-centerpiece="true"] {
-    width: 250px !important;
-    height: 320px !important;
-    order: -1;
+  .gallery-wall-frame {
+    transform: scale(calc((100vw - 32px) / 920));
+    transform-origin: top center;
+    margin-bottom: calc((610px * (1 - ((100vw - 32px) / 920))) * -1);
   }
 }
