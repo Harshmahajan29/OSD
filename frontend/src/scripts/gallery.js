@@ -7,10 +7,10 @@ export const GALLERY_ITEMS = [
   // Top Row (Sirius, McGonagall/Umbridge, Bellatrix)
   {
     id: 'mem-1',
-    imageSrc: '/gallery/event-1.jpg',
+    imageSrc: '/gallery/event-1.webp',
     title: 'The Gathering',
     caption: 'Attendees kicking off the day at WCE Sangli.',
-    frameSrc: '/frames/frame-square.png',
+    frameSrc: '/frames/frame-square.webp',
     frameStyle: 'gold',
     width: 165,
     height: 190,
@@ -21,10 +21,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 'mem-2',
-    imageSrc: '/gallery/event-2.jpg',
+    imageSrc: '/gallery/event-2.webp',
     title: 'Microservices Workshop',
     caption: 'Hands-on microservice architectures, containers, and deployments.',
-    frameSrc: '/frames/frame-oval.png',
+    frameSrc: '/frames/frame-oval.webp',
     frameStyle: 'gold',
     width: 200,
     height: 135,
@@ -35,10 +35,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 'mem-3',
-    imageSrc: '/gallery/event-3.jpg',
+    imageSrc: '/gallery/event-3.webp',
     title: 'Git & GitHub Labs',
     caption: 'Demystifying commits, branching, pull requests, and interactive rebasing.',
-    frameSrc: '/frames/frame-gothic.png',
+    frameSrc: '/frames/frame-gothic.webp',
     frameStyle: 'gold',
     width: 165,
     height: 190,
@@ -51,10 +51,10 @@ export const GALLERY_ITEMS = [
   // Middle Row (Lucius Malfoy, Grand Centerpiece Dumbledore, Severus Snape)
   {
     id: 'mem-4',
-    imageSrc: '/gallery/event-4.jpg',
+    imageSrc: '/gallery/event-4.webp',
     title: 'Terminal Sorcery',
     caption: 'Late afternoon command-line mastery and debugging puzzles.',
-    frameSrc: '/frames/frame-square.png',
+    frameSrc: '/frames/frame-square.webp',
     frameStyle: 'gold',
     width: 165,
     height: 215,
@@ -65,10 +65,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 'mem-5',
-    imageSrc: '/gallery/event-5.jpg',
+    imageSrc: '/gallery/event-5.webp',
     title: 'The Grand Assembly',
     caption: 'The keynote hall alive with open source passion and energy.',
-    frameSrc: '/frames/frame-gothic.png',
+    frameSrc: '/frames/frame-gothic.webp',
     frameStyle: 'silver',
     width: 220,
     height: 280,
@@ -80,10 +80,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 'mem-6',
-    imageSrc: '/gallery/event-6.jpg',
+    imageSrc: '/gallery/event-6.webp',
     title: 'Code & Collaboration',
     caption: 'Peer programming, architecture debates, and lightning hacks.',
-    frameSrc: '/frames/frame-square.png',
+    frameSrc: '/frames/frame-square.webp',
     frameStyle: 'gold',
     width: 165,
     height: 215,
@@ -96,10 +96,10 @@ export const GALLERY_ITEMS = [
   // Bottom Row (Hagrid, Rita/Hedwig, Gilderoy Lockhart)
   {
     id: 'mem-7',
-    imageSrc: '/gallery/event-7.jpg',
+    imageSrc: '/gallery/event-7.webp',
     title: 'The Mentorship Circle',
     caption: 'Senior engineers guiding newcomers through their first contributions.',
-    frameSrc: '/frames/frame-square.png',
+    frameSrc: '/frames/frame-square.webp',
     frameStyle: 'bronze',
     width: 165,
     height: 220,
@@ -110,10 +110,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 'mem-8',
-    imageSrc: '/gallery/event-8.jpg',
+    imageSrc: '/gallery/event-8.webp',
     title: 'Open Source Odyssey',
     caption: 'Exploring distributed systems and real-world Linux tools.',
-    frameSrc: '/frames/frame-oval.png',
+    frameSrc: '/frames/frame-oval.webp',
     frameStyle: 'gold',
     width: 200,
     height: 125,
@@ -124,10 +124,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 'mem-9',
-    imageSrc: '/gallery/event-9.jpg',
+    imageSrc: '/gallery/event-9.webp',
     title: 'The Finale',
     caption: 'Certificates, swags, and closing open source celebrations.',
-    frameSrc: '/frames/frame-gothic.png',
+    frameSrc: '/frames/frame-gothic.webp',
     frameStyle: 'gold',
     width: 165,
     height: 220,
@@ -232,7 +232,7 @@ export function initGallery(root) {
     if (modalCaption) modalCaption.textContent = item.caption;
     if (modalCounter) modalCounter.textContent = `${idx + 1} / ${GALLERY_ITEMS.length}`;
     if (modalBezel) {
-      modalBezel.src = '/frames/frame-square.png';
+      modalBezel.src = '/frames/frame-square.webp';
       modalBezel.alt = `${item.title} Frame`;
     }
   }
