@@ -66,6 +66,7 @@ function init() {
   initSessions(document.querySelector('[data-sessions]'));
   initEventCards();
   initGallery(document.querySelector('[data-gallery]'));
+  initRegistration();
   initOffscreenPause(document.querySelectorAll('main > section'));
 
   // If page is loaded with #registration or #register hash, scroll smoothly to section
